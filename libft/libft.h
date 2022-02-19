@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 23:20:05 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/02/17 22:20:00 by ptippaya         ###   ########.fr       */
+/*   Created: 2022/02/18 18:04:43 by ptippaya          #+#    #+#             */
+/*   Updated: 2022/02/18 18:04:45 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

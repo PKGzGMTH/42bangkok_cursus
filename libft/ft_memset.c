@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 21:21:10 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/02/17 21:21:10 by ptippaya         ###   ########.fr       */
+/*   Created: 2022/02/18 18:04:22 by ptippaya          #+#    #+#             */
+/*   Updated: 2022/02/18 18:07:06 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -20,4 +22,5 @@ void	*ft_memset(void *s, int c, size_t n)
 	while (i < n)
 		str[i++] = c;
 	str[i] = 0;
+	return (s);
 }
