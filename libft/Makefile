@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/02/18 13:29:56 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/02/20 21:20:12 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,12 +23,13 @@ all: $(NAME)
 
 $(NAME):
 	@clear
+	@printf 'all .c file:\n$(SRC_FILE)\n'
 	@echo "compile all ft_*.c file to ft_.*o"
 	@$(GCC) $(GCCFLAG) -c $(SRC_FILE)
 	@echo "Done!"
 	@echo "Convert all ft_*.o to Archive file libft.a"
 	@ar rcs $(NAME) $(OBJECT_FILE)
-	@echo "Done"
+	@echo "Done!"
 
 clean:
 	@echo "Remove .o files : $(OBJECT_FILE)"
@@ -38,7 +39,7 @@ clean:
 fclean: clean
 	@echo "Remove .a files : $(NAME)"
 	@rm -rf $(NAME)
-	@echo "Done"
+	@echo "Done!"
 
 re:	fclean all
 
