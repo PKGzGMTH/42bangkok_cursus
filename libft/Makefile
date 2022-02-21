@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/02/20 21:20:12 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/02/21 17:03:16 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,10 +43,14 @@ fclean: clean
 
 re:	fclean all
 
-
 norm:
 	@clear
 	@echo '------------------ norminette ------------------'
 	@$(NORM) $(HFLAG) $(H_FILE)
 	@$(NORM) $(CFLAG) $(SRC_FILE)
 	@echo '------------------------------------------------'
+
+test:
+	@clear
+	$(GCC) -Wall -Werror -Wextra test.c -o a.out
+	@./a.out; rm a.out
