@@ -6,14 +6,14 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/02/21 17:03:16 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/02/22 15:52:36 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 H_FILE = $(shell find . -type f -name "*.h")
 SRC_FILE = $(shell find . -type f -name "ft_*.c")
-OBJECT_FILE = $(shell find . -type f -name "ft_*.o")
+OBJECT_FILE = $(SRC_FILE:.c=.o)
 GCC = gcc
 GCCFLAG = -Wall -Werror -Wextra -std=c99
 NORM = norminette
@@ -28,7 +28,7 @@ $(NAME):
 	@$(GCC) $(GCCFLAG) -c $(SRC_FILE)
 	@echo "Done!"
 	@echo "Convert all ft_*.o to Archive file libft.a"
-	@ar rcs $(NAME) $(OBJECT_FILE)
+	@ar -rcs $(NAME) $(OBJECT_FILE)
 	@echo "Done!"
 
 clean:

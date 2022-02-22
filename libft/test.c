@@ -6,10 +6,11 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 22:18:54 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/02/21 16:39:24 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/02/22 13:56:59 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 #include "libft.h"
@@ -24,48 +25,52 @@ size_t	ft_strlen(const char *s)
 	return (size);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	check(int i)
+{
+	if (i)
+		printf("pass\n");
+	else
+		printf("err\n");
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {
 	size_t	i;
 
 	i = 0;
 	if (n <= 0)
-		return (0);
-	while (s1[i] == s2[i] && s1 && s2 && i < n - 1)
-		i++;
-	return (s1[i] - s2[i]);
-}
-
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-	size_t	needle_size;
-
-	needle_size = ft_strlen(needle);
-	if (!*needle || haystack == needle)
-		return ((char *)haystack);
-	while (*haystack && needle_size <= len--)
 	{
-		if (!ft_strncmp(haystack, needle, needle_size))
-			return ((char *)haystack);
-		haystack++;
+		while (src[i++])
+			;
+		return (i);
 	}
-	return (0);
-}
-
-
-char	*ft_strchr(const char *s, int c)
-{
-	while (*s && *s != c)
-		s++;
-	if (*s == c)
-		return ((char *) s);
 	else
-		return (0);
+	{
+		while (i < n - 1 && src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = 0;
+		while (src[i])
+			i++;
+		return (i);
+	}
 }
 
-int main() {
-	const char a[] = "yoloooz";
-	const char b[] = "lo";
-	puts(ft_strnstr(a, b, 3));
-	return 0;
+int	main(void)
+{
+	char src[] = "coucou";
+	char dest[10]; memset(dest, 'A', 10);
+	/* 1 */ check(ft_strlcpy(dest, src, 0) == strlen(src) && dest[0] == 'A');
+	/* 2 */ check(ft_strlcpy(dest, src, 1) == strlen(src) && dest[0] == 0 && dest[1] == 'A');
+	/* 3 */ check(ft_strlcpy(dest, src, 2) == strlen(src) && dest[0] == 'c' && dest[1] == 0  && dest[2] == 'A');
+	/* 4 */ check(ft_strlcpy(dest, src, -1) == strlen(src) && !strcmp(src, dest) && dest[strlen(src) + 1] == 'A');
+	/* 5 */ check(ft_strlcpy(dest, src, 6) == strlen(src) && !memcmp(src, dest, 5) && dest[5] == 0);
+	/* 6 */ check(ft_strlcpy(dest, src, 7) == strlen(src) && !memcmp(src, dest, 7));
+	/* 7 */ check(ft_strlcpy(dest, src, 8) == strlen(src) && !memcmp(src, dest, 7));
+	/* 8 */ check(ft_strlcpy(dest, "", 42) == 0 && !memcmp("", dest, 1));
+	/* 9 */ check(ft_strlcpy(dest, "1", 0) == 1 && dest[0] == 0);
+	write(1, "\n", 1);
+	return (0);
 }
