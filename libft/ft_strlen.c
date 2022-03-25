@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42bangkok.com>  +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:04:24 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/02/18 18:07:14 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/03/25 23:48:48 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

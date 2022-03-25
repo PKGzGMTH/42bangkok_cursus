@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/02/22 15:52:36 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/03/25 22:50:19 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,5 +52,5 @@ norm:
 
 test:
 	@clear
-	$(GCC) -Wall -Werror -Wextra test.c -o a.out
+	$(GCC) $(SRC_FILE) -Wall -Werror -Wextra test.c -o a.out
 	@./a.out; rm a.out

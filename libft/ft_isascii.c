@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42bangkok.com>  +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:04:09 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/02/18 18:06:35 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/03/25 23:50:31 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42bangkok.com>  +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:04:07 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/02/18 18:06:30 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/03/25 23:50:15 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

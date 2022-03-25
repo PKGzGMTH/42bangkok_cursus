@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42bangkok.com>  +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:03:58 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/02/18 18:06:14 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/03/25 23:50:01 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
