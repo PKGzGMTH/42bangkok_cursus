@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 22:18:54 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/03/29 14:06:37 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/03/29 20:48:52 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ void showLeaks()
 
 int	main(void)
 {
+	/* code */
 	printf("Total pass: %d\n", passcount);
+	return (0);
 }
