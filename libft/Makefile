@@ -6,13 +6,32 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/03/25 22:50:19 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/03/29 14:04:39 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-H_FILE = $(shell find . -type f -name "*.h")
-SRC_FILE = $(shell find . -type f -name "ft_*.c")
+H_FILE = libft.h
+SRC_FILE =	ft_bzero.c		\
+			ft_isalnum.c	\
+			ft_isalpha.c	\
+			ft_isascii.c	\
+			ft_isdigit.c	\
+			ft_isprint.c	\
+			ft_memchr.c		\
+			ft_memcmp.c		\
+			ft_memcpy.c		\
+			ft_memmove.c	\
+			ft_memset.c		\
+			ft_strchr.c		\
+			ft_strlcat.c	\
+			ft_strlcpy.c	\
+			ft_strlen.c		\
+			ft_strncmp.c	\
+			ft_strnstr.c	\
+			ft_strrchr.c	\
+			ft_tolower.c	\
+			ft_toupper.c
 OBJECT_FILE = $(SRC_FILE:.c=.o)
 GCC = gcc
 GCCFLAG = -Wall -Werror -Wextra -std=c99
@@ -52,5 +71,5 @@ norm:
 
 test:
 	@clear
-	$(GCC) $(SRC_FILE) -Wall -Werror -Wextra test.c -o a.out
+	@$(GCC) $(SRC_FILE) -Wall -Werror -Wextra test.c -o a.out
 	@./a.out; rm a.out
