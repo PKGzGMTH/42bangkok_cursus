@@ -6,13 +6,14 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/03/29 14:04:39 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/03/29 14:22:16 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 H_FILE = libft.h
-SRC_FILE =	ft_bzero.c		\
+SRC_FILE =	ft_atoi.c		\
+			ft_bzero.c		\
 			ft_isalnum.c	\
 			ft_isalpha.c	\
 			ft_isascii.c	\
