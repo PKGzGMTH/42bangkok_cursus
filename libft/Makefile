@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/03/29 14:22:16 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/03/30 19:45:31 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libft.a
 H_FILE = libft.h
 SRC_FILE =	ft_atoi.c		\
 			ft_bzero.c		\
+			ft_calloc.c		\
 			ft_isalnum.c	\
 			ft_isalpha.c	\
 			ft_isascii.c	\
@@ -32,7 +33,8 @@ SRC_FILE =	ft_atoi.c		\
 			ft_strnstr.c	\
 			ft_strrchr.c	\
 			ft_tolower.c	\
-			ft_toupper.c
+			ft_toupper.c	\
+			ft_strdup.c
 OBJECT_FILE = $(SRC_FILE:.c=.o)
 GCC = gcc
 GCCFLAG = -Wall -Werror -Wextra -std=c99
@@ -42,35 +44,31 @@ HFLAG = -R CheckDefine
 all: $(NAME)
 
 $(NAME):
-	@clear
-	@printf 'all .c file:\n$(SRC_FILE)\n'
-	@echo "compile all ft_*.c file to ft_.*o"
+	@printf '\e[38;2;211;0;196mCompile all ft_*.c file to ft_*.o: \e[0m'
 	@$(GCC) $(GCCFLAG) -c $(SRC_FILE)
-	@echo "Done!"
-	@echo "Convert all ft_*.o to Archive file libft.a"
+	@printf '\e[38;2;158;240;39mDone!\n\e[0m'
+	@printf '\e[38;2;211;0;196mArchive to file libft.a: \e[0m'
 	@ar -rcs $(NAME) $(OBJECT_FILE)
-	@echo "Done!"
+	@printf '\e[38;2;158;240;39mDone!\n\e[0m'
 
 clean:
-	@echo "Remove .o files : $(OBJECT_FILE)"
+	@printf '\e[38;2;211;0;196mRemove .o files: \e[0m'
 	@rm -rf $(OBJECT_FILE)
-	@echo "Done!"
+	@printf '\e[38;2;158;240;39mDone!\n\e[0m'
 
 fclean: clean
-	@echo "Remove .a files : $(NAME)"
+	@printf '\e[38;2;211;0;196mRemove $(NAME): \e[0m'
 	@rm -rf $(NAME)
-	@echo "Done!"
+	@printf '\e[38;2;158;240;39mDone!\n\e[0m'
 
 re:	fclean all
 
 norm:
-	@clear
-	@echo '------------------ norminette ------------------'
+	@printf '\e[38;2;211;0;196m------------------ norminette ------------------\n\e[0m'
 	@$(NORM) $(HFLAG) $(H_FILE)
 	@$(NORM) $(CFLAG) $(SRC_FILE)
-	@echo '------------------------------------------------'
+	@printf '\e[38;2;211;0;196m------------------------------------------------\n\e[0m'
 
 test:
-	@clear
 	@$(GCC) $(SRC_FILE) -Wall -Werror -Wextra test.c -o a.out
 	@./a.out; rm a.out
