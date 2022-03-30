@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 22:18:54 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/03/29 20:48:52 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/03/29 21:22:18 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ void showLeaks()
 int	main(void)
 {
 	/* code */
+	void	*ptr;
+
+	ptr = calloc (10, sizeof(int));
+	(void) ptr;
+	printf("%ld\n", sizeof(int));
 	printf("Total pass: %d\n", passcount);
 	return (0);
 }
