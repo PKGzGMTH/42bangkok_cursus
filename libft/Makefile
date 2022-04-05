@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/03/30 19:45:31 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/04/05 13:40:35 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,11 @@ SRC_FILE =	ft_atoi.c		\
 			ft_strrchr.c	\
 			ft_tolower.c	\
 			ft_toupper.c	\
-			ft_strdup.c
+			ft_strdup.c		\
+			ft_substr.c		\
+			ft_strjoin.c	\
+			ft_strtrim.c	\
+			ft_split.c
 OBJECT_FILE = $(SRC_FILE:.c=.o)
 GCC = gcc
 GCCFLAG = -Wall -Werror -Wextra -std=c99
