@@ -6,13 +6,13 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 13:38:40 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/05 23:00:24 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/06 14:59:13 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	countchr(const char *s, char c)
+size_t	countstr(const char *s, char c)
 {
 	int		state;
 	size_t	count;
@@ -33,7 +33,7 @@ size_t	countchr(const char *s, char c)
 	return (count);
 }
 
-size_t	nextchr(const char *s, char c)
+size_t	nextstr(const char *s, char c)
 {
 	size_t	i;
 
@@ -52,7 +52,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	size = 0;
-	count = countchr(s, c);
+	count = countstr(s, c);
 	dest = (char **) ft_calloc(sizeof(char *), count + 1);
 	if (!dest)
 		return (0);
@@ -60,7 +60,7 @@ char	**ft_split(char const *s, char c)
 	{
 		while (*s == c)
 			s++;
-		size = nextchr(s, c);
+		size = nextstr(s, c);
 		dest[i] = ft_substr(s, 0, size);
 		if (!dest[i])
 			return (0);

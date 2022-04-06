@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 19:21:28 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/05 22:49:32 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/06 17:31:52 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	dest = (char *) ft_calloc(sizeof(char), len + 1);
 	if (!dest)
 		return (0);
-	ft_bzero(dest, len + 1);
 	ft_strlcpy(dest, s + start, len + 1);
 	return (dest);
 }
