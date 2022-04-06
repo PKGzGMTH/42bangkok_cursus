@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/04/06 15:05:35 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/04/06 22:11:30 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,30 +49,30 @@ HFLAG = -R CheckDefine
 all: $(NAME)
 
 $(NAME):
-	@printf '\e[38;2;211;0;196mCompile all ft_*.c file to ft_*.o: \e[0m'
+	@printf "\e[38;2;211;0;196mCompile all ft_*.c file to ft_*.o: \e[0m"
 	@$(GCC) $(GCCFLAG) -c $(SRC_FILE)
-	@printf '\e[38;2;158;240;39mDone!\n\e[0m'
-	@printf '\e[38;2;211;0;196mArchive to file libft.a: \e[0m'
+	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
+	@printf "\e[38;2;211;0;196mArchive to file libft.a: \e[0m"
 	@ar -rcs $(NAME) $(OBJECT_FILE)
-	@printf '\e[38;2;158;240;39mDone!\n\e[0m'
+	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
 
 clean:
-	@printf '\e[38;2;211;0;196mRemove .o files: \e[0m'
+	@printf "\e[38;2;211;0;196mRemove .o files: \e[0m"
 	@rm -rf $(OBJECT_FILE)
-	@printf '\e[38;2;158;240;39mDone!\n\e[0m'
+	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
 
 fclean: clean
-	@printf '\e[38;2;211;0;196mRemove $(NAME): \e[0m'
+	@printf "\e[38;2;211;0;196mRemove $(NAME): \e[0m"
 	@rm -rf $(NAME)
-	@printf '\e[38;2;158;240;39mDone!\n\e[0m'
+	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
 
 re:	fclean all
 
 norm:
-	@printf '\e[38;2;211;0;196m------------------ norminette ------------------\n\e[0m'
+	@printf "\e[38;2;211;0;196m------------------ norminette ------------------\n\e[0m"
 	@$(NORM) $(HFLAG) $(H_FILE)
 	@$(NORM) $(CFLAG) $(SRC_FILE)
-	@printf '\e[38;2;211;0;196m------------------------------------------------\n\e[0m'
+	@printf "\e[38;2;211;0;196m------------------------------------------------\n\e[0m"
 
 test:
 	@$(GCC) $(SRC_FILE) -Wall -Werror -Wextra test.c -o a.out
