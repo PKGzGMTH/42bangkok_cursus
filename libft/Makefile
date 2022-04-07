@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/04/07 17:11:31 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/04/08 00:51:32 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,12 @@ SRC_FILE =	ft_atoi.c		\
 			ft_strtrim.c	\
 			ft_split.c 		\
 			ft_itoa.c		\
-			ft_strmapi.c
+			ft_strmapi.c	\
+			ft_striteri.c	\
+			ft_putchar_fd.c	\
+			ft_putstr_fd.c	\
+			ft_putendl_fd.c	\
+			ft_putnbr_fd.c
 OBJECT_FILE = $(SRC_FILE:.c=.o)
 GCC = gcc
 GCCFLAG = -Wall -Werror -Wextra -std=c99

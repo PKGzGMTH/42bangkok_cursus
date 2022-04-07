@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 15:04:22 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/07 00:18:38 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/08 01:39:47 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	tostrsize(int n,int *multiple)
+size_t	tostrsize(int n, int *multiple)
 {
 	size_t	size;
 
@@ -49,9 +49,10 @@ char	*ft_itoa(int n)
 		dest = (char *) ft_calloc(size + 1, sizeof(char));
 		if (multiple == -1)
 			dest[0] = '-';
+		n *= multiple;
 		while (size > 0 && dest[size - 1] != '-')
 		{
-			dest[size - 1] = (char) (n % 10) + '0';
+			dest[size - 1] = (char)(n % 10) + '0';
 			n /= 10;
 			size--;
 		}
