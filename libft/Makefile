@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
+#    By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/04/06 22:11:30 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/04/07 17:11:31 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ SRC_FILE =	ft_atoi.c		\
 			ft_strjoin.c	\
 			ft_strtrim.c	\
 			ft_split.c 		\
-			ft_itoa.c
+			ft_itoa.c		\
+			ft_strmapi.c
 OBJECT_FILE = $(SRC_FILE:.c=.o)
 GCC = gcc
 GCCFLAG = -Wall -Werror -Wextra -std=c99
