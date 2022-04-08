@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/04/08 13:40:28 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/04/08 15:42:51 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,7 +95,7 @@ re:	fclean all
 norm:
 	@printf "\e[38;2;211;0;196m------------------ norminette ------------------\n\e[0m"
 	@$(NORM) $(HFLAG) $(H_FILE)
-	@$(NORM) $(CFLAG) $(SRC_FILE)
+	@$(NORM) $(CFLAG) $(SRC_FILE) $(BONUS_FILE)
 	@printf "\e[38;2;211;0;196m------------------------------------------------\n\e[0m"
 
 test:
