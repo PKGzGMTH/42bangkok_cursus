@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 21:56:58 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/08 00:27:21 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:27:56 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
-	i = 0;
-	while (s[i])
+	if (s && f)
 	{
-		f(i, &s[i]);
-		i++;
+		i = 0;
+		while (s[i])
+		{
+			f(i, &s[i]);
+			i++;
+		}
 	}
 }

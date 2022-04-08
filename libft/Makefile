@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/04/08 08:06:29 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/04/08 13:40:28 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,12 +82,12 @@ bonus:
 
 clean:
 	@printf "\e[38;2;211;0;196mRemove .o files: \e[0m"
-	@rm -rf $(OBJECT_FILE) $(BONUS_OBJECT_FILE)
+	@rm -f $(OBJECT_FILE) $(BONUS_OBJECT_FILE)
 	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
 
 fclean: clean
 	@printf "\e[38;2;211;0;196mRemove $(NAME): \e[0m"
-	@rm -rf $(NAME)
+	@rm -f $(NAME)
 	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
 
 re:	fclean all
@@ -101,4 +101,5 @@ norm:
 test:
 	@$(GCC) $(SRC_FILE) -Wall -Werror -Wextra test.c -o a.out
 	@./a.out; rm a.out
+
 .PHONY: all clean fclean bonus test norm re

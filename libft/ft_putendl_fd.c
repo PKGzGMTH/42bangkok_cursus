@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 00:42:15 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/08 00:49:09 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:31:25 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	while (*s)
-		ft_putchar_fd(*s++, fd);
-	write(fd, "\n", 1);
+	if (s && fd)
+	{
+		while (*s)
+			ft_putchar_fd(*s++, fd);
+		write(fd, "\n", 1);
+	}
 }

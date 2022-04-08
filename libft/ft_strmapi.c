@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:06:27 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/08 00:26:28 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:33:15 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*dest;
 
 	i = 0;
-	dest = (char *) ft_calloc(ft_strlen(s) + 1, sizeof(char));
-	if (!dest)
-		return (0);
-	while (s[i])
+	dest = 0;
+	if (s && f)
 	{
-		dest[i] = f(i, s[i]);
-		i++;
+		dest = (char *) ft_calloc(ft_strlen(s) + 1, sizeof(char));
+		if (!dest)
+			return (0);
+		while (s[i])
+		{
+			dest[i] = f(i, s[i]);
+			i++;
+		}
 	}
 	return (dest);
 }

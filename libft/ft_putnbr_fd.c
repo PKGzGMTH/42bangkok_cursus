@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 00:51:23 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/08 02:04:59 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/08 11:20:43 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 			ft_putchar_fd('-', fd);
 			n *= -1;
 		}
-		if (n >= 9)
+		if (n > 9)
 			ft_putnbr_fd(n / 10, fd);
 		ft_putchar_fd((n % 10) + '0', fd);
 	}

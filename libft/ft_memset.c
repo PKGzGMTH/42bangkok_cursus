@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:04:22 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/07 23:43:20 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/08 08:15:01 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 		((char *)(s + i++))[0] = c;
-	((char *)(s + i))[0] = 0;
 	return (s);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 14:13:41 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/03/29 20:46:10 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/08 08:36:48 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isspace(char c)
 {
-	if ((8 < c && c < 14) || c == 32 || c == 27)
+	if ((8 < c && c < 14) || c == 32)
 		return (1);
 	else
 		return (0);

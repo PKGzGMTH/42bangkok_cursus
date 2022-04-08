@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 15:04:22 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/08 01:39:47 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:00:57 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ char	*ft_itoa(int n)
 	{
 		size = tostrsize(n, &multiple);
 		dest = (char *) ft_calloc(size + 1, sizeof(char));
+		if (!dest)
+			return (0);
 		if (multiple == -1)
 			dest[0] = '-';
 		n *= multiple;

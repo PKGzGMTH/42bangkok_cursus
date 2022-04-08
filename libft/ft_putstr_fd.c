@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 00:03:20 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/08 00:41:21 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:30:19 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-		ft_putchar_fd(*s++, fd);
-	write(fd, "\0", 1);
+	if (s && fd)
+		while (*s)
+			ft_putchar_fd(*s++, fd);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:04:15 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/03/25 23:50:39 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/08 11:58:48 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 int	ft_isprint(int c)
 {
-	if (31 < c && c != 127)
-		return (1);
-	else
-		return (0);
+	return (31 < c && c < 127);
 }
