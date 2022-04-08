@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/04/08 00:51:32 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/04/08 08:06:29 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,17 @@ SRC_FILE =	ft_atoi.c		\
 			ft_putstr_fd.c	\
 			ft_putendl_fd.c	\
 			ft_putnbr_fd.c
+BONUS_FILE = ft_lstnew.c		\
+			ft_lstadd_front.c	\
+			ft_lstsize.c		\
+			ft_lstlast.c		\
+			ft_lstadd_back.c	\
+			ft_lstdelone.c		\
+			ft_lstclear.c		\
+			ft_lstiter.c		\
+			ft_lstmap.c
 OBJECT_FILE = $(SRC_FILE:.c=.o)
+BONUS_OBJECT_FILE = $(BONUS_FILE:.c=.o)
 GCC = gcc
 GCCFLAG = -Wall -Werror -Wextra -std=c99
 NORM = norminette
@@ -62,9 +72,17 @@ $(NAME):
 	@ar -rcs $(NAME) $(OBJECT_FILE)
 	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
 
+bonus:
+	@printf "\e[38;2;211;0;196mCompile all ft_*.c file to ft_*.o: \e[0m"
+	@$(GCC) $(GCCFLAG) -c $(BONUS_FILE)
+	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
+	@printf "\e[38;2;211;0;196mArchive to file libft.a: \e[0m"
+	@ar -rcs $(NAME) $(BONUS_OBJECT_FILE)
+	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
+
 clean:
 	@printf "\e[38;2;211;0;196mRemove .o files: \e[0m"
-	@rm -rf $(OBJECT_FILE)
+	@rm -rf $(OBJECT_FILE) $(BONUS_OBJECT_FILE)
 	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
 
 fclean: clean
@@ -83,3 +101,4 @@ norm:
 test:
 	@$(GCC) $(SRC_FILE) -Wall -Werror -Wextra test.c -o a.out
 	@./a.out; rm a.out
+.PHONY: all clean fclean bonus test norm re
