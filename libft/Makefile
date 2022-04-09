@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/04/09 12:34:58 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/04/09 21:45:49 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,7 @@ GCCFLAG = -Wall -Werror -Wextra -std=c99
 NORM = norminette
 CFLAG = -R CheckForbiddenSourceHeader
 HFLAG = -R CheckDefine
+
 all: $(NAME)
 
 $(NAME):
@@ -72,7 +73,7 @@ $(NAME):
 	@ar -rcs $(NAME) $(OBJECT_FILE)
 	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
 
-bonus:
+bonus: all
 	@printf "\e[38;2;211;0;196mCompile all ft_*.c file to ft_*.o: \e[0m"
 	@$(GCC) $(GCCFLAG) -c $(BONUS_FILE)
 	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
