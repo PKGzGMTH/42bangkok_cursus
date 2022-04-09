@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+         #
+#    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/04/08 15:42:51 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/04/09 12:34:58 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,7 @@ fclean: clean
 	@rm -f $(NAME)
 	@printf "\e[38;2;158;240;39mDone!\n\e[0m"
 
-re:	fclean all
+re:	fclean all bonus
 
 norm:
 	@printf "\e[38;2;211;0;196m------------------ norminette ------------------\n\e[0m"
@@ -98,8 +98,8 @@ norm:
 	@$(NORM) $(CFLAG) $(SRC_FILE) $(BONUS_FILE)
 	@printf "\e[38;2;211;0;196m------------------------------------------------\n\e[0m"
 
-test:
-	@$(GCC) $(SRC_FILE) -Wall -Werror -Wextra test.c -o a.out
+test: re
+	$(GCC) -Wall -Werror -Wextra test.c $(NAME) -o a.out
 	@./a.out; rm a.out
 
 .PHONY: all clean fclean bonus test norm re
