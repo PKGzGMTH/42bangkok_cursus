@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 21:00:54 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/07 23:33:24 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/09 14:24:36 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,10 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*dst;
-	size_t	max;
 
-	if (nmemb > size)
-		max = nmemb;
-	else
-		max = size;
-	if (nmemb * size < max)
+	if (nmemb * size < nmemb && nmemb * size < size)
 		return (0);
-	if (nmemb == 0 || size == 0)
+	else if (nmemb == 0 || size == 0)
 	{
 		nmemb = 1;
 		size = 1;
