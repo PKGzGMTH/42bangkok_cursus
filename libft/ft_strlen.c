@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:04:24 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/03/25 23:48:48 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/10 14:52:51 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	size;
 
 	size = 0;
-	while (s[size])
+	while (s && s[size])
 		size++;
 	return (size);
 }
