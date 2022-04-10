@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 03:39:28 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/08 15:44:10 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/10 15:02:52 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*dest;
-
-	dest = lst;
-	while (lst)
-	{
-		dest = lst;
+	while (lst && lst->next)
 		lst = lst->next;
-	}
-	return (dest);
+	return (lst);
 }
