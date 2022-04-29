@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 12:59:55 by ptippaya          #+#    #+#              #
-#    Updated: 2022/04/12 13:34:15 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/04/28 20:29:27 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,12 @@ HFLAG = -R CheckDefine
 $(NAME): all
 
 all:
+	@clear
+	@$(CC) $(CCFLAG) $(BUFF) $(SRC) main.c
+	@./a.out < test.txt; rm a.out
+	@printf "\e[38;2;158;240;39m\n--------------------- Done! ---------------------\n\e[0m"
+
+leaks:
 	@clear
 	@$(CC) $(CCFLAG) $(BUFF) $(SRC) main.c
 	@valgrind --leak-check=full ./a.out < test.txt; rm a.out

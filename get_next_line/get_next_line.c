@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:55:39 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/12 19:56:18 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/04/21 22:30:30 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ char	*get_next_line(int fd)
 	static char	*old = NULL;
 
 	dest = NULL;
-	if (BUFFER_SIZE <= 0 || !get_next_line_read(fd, &dest, &old) || (!*old && !*dest))
+	if (BUFFER_SIZE <= 0 || !get_next_line_read(fd, &dest, &old) \
+		|| (!*old && !*dest))
 	{
 		free (dest);
 		free (old);
