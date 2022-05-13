@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:16:39 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/12 19:30:15 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/05/13 21:42:46 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,26 @@ int	main(void)
 
 	s = get_next_line(0);
 	print(s);
-	free(s);
+	if (s)
+		free(s);
 	s = get_next_line(0);
 	print(s);
-	free(s);
+	if (s)
+		free(s);
 	s = get_next_line(0);
 	print(s);
-	free(s);
+	if (s)
+		free(s);
 	s = get_next_line(0);
 	print(s);
-	free(s);
+	if (s)
+		free(s);
 	s = get_next_line(0);
 	print(s);
-	free(s);
+	if (s)
+		free(s);
+	s = get_next_line(0);
+	print(s);
+	if (s)
+		free(s);
 }

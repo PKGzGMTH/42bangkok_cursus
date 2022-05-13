@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:55:09 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/04/12 19:35:14 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/05/13 00:01:36 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,15 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (0);
 	ft_strlcat(dest, s1, nextchr(s1, 0) + 1);
 	ft_strlcat(dest, s2, nextchr(s1, 0) + nextchr(s2, 0) + 1);
-	free(s1);
-	free(s2);
+	if (s1)
+	{
+		free(s1);
+		s1 = NULL;
+	}
+	if (s2)
+	{
+		free(s2);
+		s2 = NULL;
+	}
 	return (dest);
 }
