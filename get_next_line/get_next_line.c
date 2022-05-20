@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:55:39 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/05/20 19:57:32 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/05/21 00:48:16 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,56 +26,57 @@ size_t	nextchr(char *s, char c)
 		return (0);
 }
 
-int	get_next_read(int fd, char **dest, char **old)
+int	get_next_read(int fd, char **dest)
 {
-	char		*buff;
-	static int	state = 1;
+	char		*raw;
+	size_t		read_size;
 
-	buff = NULL;
-	while (state)
+	raw = NULL;
+	raw = (char *) ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	if (!raw)
+		return (0);
+	read_size = read(fd, raw, BUFFER_SIZE);
+	if (!read_size)
 	{
-		buff = (char *) ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-		if (!buff)
-			return (0);
-		if (!read(fd, buff, BUFFER_SIZE))
-		{
-			if (buff && *buff)
-			{
-				*dest = ft_strjoin(*old, buff);
-				state = 0;
-				return (1);
-			}
-			else
-				return (0);
-		}
-		else
-			*old = ft_strjoin(*old, buff);
-		if ((*old)[nextchr(*old, '\n')] == '\n')
-		{
-			*dest = ft_substr(*old, 0, nextchr(*old, '\n') + 1);
-			buff = ft_substr(*old, nextchr(*old, '\n') + 1, \
-			nextchr(*old, '\0') - nextchr(*old, '\n') + 1);
-			if (*old)
-			{
-				free (*old);
-				*old = NULL;
-			}
-			*old = buff;
-			break ;
-		}
+		free(raw);
+		return (0);
 	}
-	return (state);
+	else if (read_size < BUFFER_SIZE)
+	{
+		*dest = (char *)ft_calloc(read_size + 1, sizeof(char));
+		ft_strlcpy(*dest, raw, read_size);
+		free(raw);
+	}
+	else
+		*dest = raw;
+	return (1);
 }
 
 char	*get_next_line(int fd)
 {
 	char		*dest;
-	static char	*old = NULL;
+	char		*buff;
+	static char	*remain = NULL;
 
 	dest = NULL;
-	if (BUFFER_SIZE <= 0 || !get_next_read(fd, &dest, &old))
-	{
+	buff = NULL;
+	if (BUFFER_SIZE <= 0)
 		return (NULL);
+	while (!remain || (remain && remain[nextchr(remain, '\n')] != '\n'))
+	{
+		// printf("%s\n",remain);
+		get_next_read(fd, &buff);
+		remain = ft_strjoin(remain, buff);
 	}
+	buff = remain;
+	if (buff && nextchr(buff, '\n') == '\n')
+	{
+		dest = ft_substr(buff, 0, nextchr(buff, '\n') + 1);
+		remain = ft_substr(buff, nextchr(buff, '\n') + 1, \
+		nextchr(buff, '\0') - nextchr(buff, '\n') + 1);
+		free(buff);
+	}
+	else
+		return (remain);
 	return (dest);
 }
