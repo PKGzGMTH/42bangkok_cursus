@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:55:39 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/05/13 21:47:23 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:57:32 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,6 @@ size_t	nextchr(char *s, char c)
 	else
 		return (0);
 }
-
-// int	get_next_line_read(int fd, char **dest, char **old)
-// {
-// 	char	*temp;
-
-// 	temp = NULL;
-// 	while (!*old || !**old || (*old)[nextchr(*old, '\n')] != '\n')
-// 	{
-// 		temp = (char *) ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-// 		if (!temp || !read(fd, temp, BUFFER_SIZE) || (temp && !*temp))
-// 		{
-// 			free (temp);
-// 			return (0);
-// 		}
-// 		*old = ft_strjoin(*old, temp);
-// 	}
-// 	*dest = ft_substr(*old, 0, nextchr(*old, '\n') + 1);
-// 	temp = ft_substr(*old + nextchr(*old, '\n') + 1, 0, nextchr(*old, 0));
-// 	free(*old);
-// 	*old = temp;
-// 	return (1);
-// }
 
 int	get_next_read(int fd, char **dest, char **old)
 {
