@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:16:39 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/05/13 21:42:46 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:20:07 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	print(char *s)
 {
-	static size_t	line;
+	static size_t	line = 0;
 
 	line++;
 	printf("%ld:%s", line, s);
@@ -32,29 +32,15 @@ void	check(int i)
 int	main(void)
 {
 	char	*s;
+	size_t	i;
 
-	s = get_next_line(0);
-	print(s);
-	if (s)
-		free(s);
-	s = get_next_line(0);
-	print(s);
-	if (s)
-		free(s);
-	s = get_next_line(0);
-	print(s);
-	if (s)
-		free(s);
-	s = get_next_line(0);
-	print(s);
-	if (s)
-		free(s);
-	s = get_next_line(0);
-	print(s);
-	if (s)
-		free(s);
-	s = get_next_line(0);
-	print(s);
-	if (s)
-		free(s);
+	i = 0;
+	while(i < 6)
+	{
+		s = get_next_line(0);
+		print(s);
+		if (s)
+			free(s);
+		i++;
+	}
 }
