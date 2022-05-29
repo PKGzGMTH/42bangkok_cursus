@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ptippaya <ptippaya@student.42.fr>          +#+  +:+       +#+         #
+#    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 12:59:55 by ptippaya          #+#    #+#              #
-#    Updated: 2022/05/20 22:18:26 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/05/29 16:30:11 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ all:
 test:
 	@clear
 	@$(CC) $(CCFLAG) $(BUFF) test.c
-	@./a.out < test.txt; rm a.out
+	@valgrind --leak-check=full ./a.out < test.txt; rm a.out
 	@printf "\e[38;2;158;240;39m\n--------------------- Done! ---------------------\n\e[0m"
 
 leaks:
