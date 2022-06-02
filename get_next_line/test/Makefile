@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 12:59:55 by ptippaya          #+#    #+#              #
-#    Updated: 2022/05/29 16:30:11 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/06/02 20:59:02 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ BONUS =	../get_next_line_bonus.c		\
 HSRC =	../get_next_line.h
 HBONUS =../get_next_line_bonus.h
 CC = gcc
-CCFLAG = -Wall -Wextra -Werror
+CCFLAG = -Wall -Wextra -Werror -g
 BUFF = -D BUFFER_SIZE=42
 NORM = norminette
 CFLAG = -R CheckForbiddenSourceHeader
@@ -29,13 +29,13 @@ $(NAME): all
 all:
 	@clear
 	@$(CC) $(CCFLAG) $(BUFF) $(SRC) main.c
-	@./a.out < test.txt; rm a.out
+	@./a.out
 	@printf "\e[38;2;158;240;39m\n--------------------- Done! ---------------------\n\e[0m"
 
 test:
 	@clear
 	@$(CC) $(CCFLAG) $(BUFF) test.c
-	@valgrind --leak-check=full ./a.out < test.txt; rm a.out
+	@valgrind --leak-check=full ./a.out; rm a.out
 	@printf "\e[38;2;158;240;39m\n--------------------- Done! ---------------------\n\e[0m"
 
 leaks:

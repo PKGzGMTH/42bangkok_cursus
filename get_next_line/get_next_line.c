@@ -6,22 +6,20 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:55:39 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/05/29 16:25:53 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/06/02 21:25:27 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_next_read(int fd, char *rest)
+char	*get_next_read(int fd, char *dest)
 {
 	char	*buff;
-	char	*dest;
 	ssize_t	read_size;
 
 	buff = NULL;
-	dest = NULL;
 	read_size = 1;
-	while ((!dest || dest[ft_strchr(dest, '\n')] != '\n') && read_size)
+	while ((!dest || dest[ft_strchr(dest, '\n')] != '\n') && read_size > 0)
 	{
 		buff = (char *) malloc (sizeof(char) * (BUFFER_SIZE + 1));
 		if (!buff)
@@ -34,7 +32,7 @@ char	*get_next_read(int fd, char *rest)
 			return (NULL);
 		}
 		buff[read_size] = '\0';
-		dest = ft_strjoin(rest, buff);
+		dest = ft_strjoin(dest, buff);
 	}
 	if (!read_size && !*dest)
 	{
@@ -83,9 +81,11 @@ char	*get_next_rest(char	*rest)
 		while (rest[j])
 			dest[i++] = rest[j++];
 		dest[i] = '\0';
+		if (rest)
+			free (rest);
 	}
-	if (rest)
-		free (rest);
+	else
+		dest = rest;
 	return (dest);
 }
 
