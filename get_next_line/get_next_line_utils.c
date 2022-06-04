@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:55:09 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/06/02 20:32:03 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/06/04 22:17:25 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,10 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	dest[i + j] = '\0';
 	if (s1)
-	{
 		free(s1);
-		s1 = NULL;
-	}
+	s1 = NULL;
 	if (s2)
-	{
 		free(s2);
-		s2 = NULL;
-	}
+	s2 = NULL;
 	return (dest);
 }

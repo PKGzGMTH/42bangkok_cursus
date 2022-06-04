@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:55:39 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/06/02 21:25:27 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/06/04 22:41:10 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*get_next_read(int fd, char *dest)
 		{
 			if (buff)
 				free(buff);
+			buff = NULL;
 			return (NULL);
 		}
 		buff[read_size] = '\0';
@@ -84,8 +85,6 @@ char	*get_next_rest(char	*rest)
 		if (rest)
 			free (rest);
 	}
-	else
-		dest = rest;
 	return (dest);
 }
 
@@ -94,6 +93,7 @@ char	*get_next_line(int fd)
 	char		*dest;
 	static char	*rest = NULL;
 
+	dest = NULL;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
 	if (!rest || rest[ft_strchr(rest, '\n')] != '\n')

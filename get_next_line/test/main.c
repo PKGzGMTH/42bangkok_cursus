@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:16:39 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/06/02 21:27:17 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/06/04 22:29:03 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	print(char *s)
 	static size_t	line = 0;
 
 	line++;
-	if (s)
-		printf("%ld:%s", line, s);
+	if (s && ft_strchr(s, '\n') == '\n')
+		printf("%ld:\t%s", line, s);
 	else
-		printf("%ld:%s\n", line, s);
+		printf("%ld:\t%s", line, s);
 }
 
 void	check(int i)
@@ -40,14 +40,14 @@ int	main(void)
 	size_t	i;
 
 	// fd = open("test.txt", O_RDONLY);
-	fd = open("test_nonl.txt", O_RDONLY);
+	fd = open("main.c", O_RDONLY);
 	i = 0;
-	while(i < 10)
+	while(i < 60)
 	{
 		s = get_next_line(fd);
 		print(s);
-		if (s)
-			free(s);
+		//if (s)
+		//	free(s);
 		i++;
 	}
 	close(fd);

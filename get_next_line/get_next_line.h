@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:52:20 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/05/27 21:24:21 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/06/04 22:13:22 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 200
 # endif
 
 char	*get_next_line(int fd);
