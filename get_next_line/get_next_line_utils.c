@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:55:09 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/06/04 22:17:25 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/06/06 20:00:43 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,19 @@ char	*ft_strjoin(char *s1, char *s2)
 	i = 0;
 	j = 0;
 	dest = NULL;
-	total = ft_strchr(s1, '\0') + ft_strchr(s2, '\0') + 1;
 	if (!s1 && !s2)
 		return (dest);
-	dest = (char *) malloc (sizeof(char) * total);
+	total = ft_strchr(s1, '\0') + ft_strchr(s2, '\0');
+	dest = (char *) malloc (sizeof(char) * (total + 1));
 	if (!dest)
 		return (0);
-	while (s1 && s1[i] && i + j < total)
-	{
-		dest[i] = s1[i];
-		i++;
-	}
-	while (s2 && s2[j] && i + j < total)
-	{
-		dest[i + j] = s2[j];
-		j++;
-	}
-	dest[i + j] = '\0';
+	while (s1 && s1[j] && i < total)
+		dest[i++] = s1[j++];
+	while (s2 && *s2 && i < total)
+		dest[i++] = *(s2++);
+	dest[i] = '\0';
 	if (s1)
 		free(s1);
 	s1 = NULL;
-	if (s2)
-		free(s2);
-	s2 = NULL;
 	return (dest);
 }
