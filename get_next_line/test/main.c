@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:16:39 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/06/06 21:51:18 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/06/10 21:38:45 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ void	print(char *s)
 	static size_t	line = 0;
 
 	line++;
-	printf("%ld:\t%s", line, s);
+	if (s && s[ft_strchr(s, '\n')] == '\n')
+		printf("%ld:\t%s", line, s);
+	else
+		printf("%ld:\t%s\n", line, s);
 }
 
 void	check(int i)
@@ -32,21 +35,46 @@ void	check(int i)
 
 int	main(void)
 {
-	int		fd;
+	int		fd[3];
 	char	*s;
 	size_t	i;
 
-	// fd = open("test.txt", O_RDONLY);
-	fd = open("main.c", O_RDONLY);
+	fd[0] = open("41_with_nl", O_RDONLY);
+	fd[1] = open("42_with_nl", O_RDONLY);
+	fd[2] = open("43_with_nl", O_RDONLY);
 	// fd = open("41_no_nl", O_RDONLY);
 	i = 0;
-	while(i < 60)
+	while (i < 3)
 	{
-		s = get_next_line(fd);
+		s = get_next_line(fd[0]);
 		print(s);
-		// if (s)
-			// free(s);
+		if (s)
+			free(s);
+		s = get_next_line(fd[1]);
+		print(s);
+		if (s)
+			free(s);
+		s = get_next_line(fd[2]);
+		print(s);
+		if (s)
+			free(s);
 		i++;
 	}
-	close(fd);
+	// i = 0;
+	// while (i < 3)
+	// {
+	// 	s = get_next_line(fd[1]);
+	// 	print(s);
+	// 	i++;
+	// }
+	// i = 0;
+	// while (i < 3)
+	// {
+	// 	s = get_next_line(fd[2]);
+	// 	print(s);
+	// 	i++;
+	// }
+	close(fd[0]);
+	close(fd[1]);
+	close(fd[2]);
 }

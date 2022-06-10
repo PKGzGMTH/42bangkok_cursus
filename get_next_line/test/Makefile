@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 12:59:55 by ptippaya          #+#    #+#              #
-#    Updated: 2022/06/04 22:03:06 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/06/09 13:55:46 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,26 +28,26 @@ $(NAME): all
 
 all:
 	@clear
-	@$(CC) $(CCFLAG) $(BUFF) $(SRC) main.c
+	@$(CC) $(CCFLAG) $(BUFF) $(BONUS) main.c
 	@./a.out
 	@printf "\e[38;2;158;240;39m\n--------------------- Done! ---------------------\n\e[0m"
 
 test:
 	@clear
 	@$(CC) $(CCFLAG) $(BUFF) test.c
-	@valgrind --leak-check=full ./a.out; rm a.out
+	@valgrind --leak-check=full ./a.out
 	@printf "\e[38;2;158;240;39m\n--------------------- Done! ---------------------\n\e[0m"
 
 leaks:
 	@clear
-	@$(CC) $(CCFLAG) $(BUFF) $(SRC) main.c
-	@valgrind --leak-check=full ./a.out < test.txt; rm a.out
+	@$(CC) $(CCFLAG) $(BUFF) $(BONUS) main.c
+	@valgrind --leak-check=full ./a.out < test.txt
 	@printf "\e[38;2;158;240;39m\n--------------------- Done! ---------------------\n\e[0m"
 
 norm:
 	@clear
 	@printf "\e[38;2;211;0;196m------------------ norminette ------------------\n\e[0m"
-	@$(NORM) $(HFLAG) $(HSRC)	#$(HBONUS)
+	@$(NORM) $(HFLAG) $(HSRC)	$(HBONUS)
 	@printf "\e[38;2;211;0;196m---------------------- .c ----------------------\n\e[0m"
-	@$(NORM) $(CFLAG) $(SRC)	#$(BONUS)
+	@$(NORM) $(CFLAG) $(SRC)	$(BONUS)
 	@printf "\e[38;2;211;0;196m------------------------------------------------\n\e[0m"
