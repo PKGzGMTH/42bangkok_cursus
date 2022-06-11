@@ -6,12 +6,14 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:16:39 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/06/10 21:38:45 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/06/11 20:51:21 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../get_next_line.h"
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/uio.h>
 #include <fcntl.h>
 
 void	print(char *s)
