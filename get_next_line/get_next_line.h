@@ -6,17 +6,14 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:52:20 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/06/07 20:30:37 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/06/11 20:50:59 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# include <sys/types.h>
-# include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
