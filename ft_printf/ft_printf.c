@@ -6,11 +6,15 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:03:21 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/06/16 19:04:31 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/07/10 09:44:52 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+size_t init_format(char *s)
+{
+}
 
 int	ft_printf_format(char c, va_list arg)
 {

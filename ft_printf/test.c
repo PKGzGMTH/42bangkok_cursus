@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 21:52:34 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/06/16 19:21:56 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/07/10 09:54:14 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	main(void)
 	ft_printf("This %p is even stranger\n", (void *)-1);
 	printf("This %p is even stranger\n", (void *)-1);
 	printf("%lu\n", (size_t) -1);
+	ft_printf("hello world %s.\n", "PPAP");
+	printf("%lu %lu %lu\n", sizeof(char), sizeof(short), sizeof(int));
 	// printf("%d\n", printf("aaa\n"));
 	// printf("|%d|\n|%-1.2d|\n", 255, 123);
 	// printf("%ln\n", &ptr);
