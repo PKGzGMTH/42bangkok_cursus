@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 13:19:16 by ptippaya          #+#    #+#              #
-#    Updated: 2022/09/03 17:29:42 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/09/03 17:58:33 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,4 +37,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re test norm
+.PHONY: all norm clean fclean re

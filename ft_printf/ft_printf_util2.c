@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 12:57:03 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/06/16 19:59:49 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/09/03 17:54:19 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	ft_putptr(size_t n)
 {
 	int	count;
 
-	if (!n)
-		return (ft_putstr("(nil)"));
 	count = ft_putstr("0x");
 	ft_putubase(n, "0123456789abcdef", &count);
 	return (count);
