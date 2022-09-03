@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 13:19:16 by ptippaya          #+#    #+#              #
-#    Updated: 2022/06/16 20:05:13 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/09/03 17:29:42 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,8 +36,5 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
-
-test: re clean
-	@clear; $(CC) $(CFLAGS) test.c -L. $(NAME) && ./a.out && rm a.out
 
 .PHONY: all clean fclean re test norm

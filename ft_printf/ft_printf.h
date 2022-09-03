@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:04:10 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/07/10 10:05:53 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/09/03 17:23:03 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include <stdio.h>
-
-typedef struct	s_format
-{
-	va_list	argv;
-	size_t	size;
-	size_t	leng;
-	char	is_dot;
-	char	format;
-	char	is_zero;
-	char	is_plus;
-	char	is_minus;
-}	t_format;
 
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
