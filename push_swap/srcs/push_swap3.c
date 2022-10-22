@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 23:52:09 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/22 02:10:30 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/10/22 12:13:38 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,6 @@ void	push_swap3(t_stack **a, t_stack **b)
 	bool	flag;
 
 	flag = 1;
-	if (*a && (*a)->next && !(*a)->next->next && (*a)->data > (*a)->next->data)
-		sa(a, b);
 	while (flag && *a && (*a)->next && (*a)->next->next)
 	{
 		if ((*a)->data < (*a)->next->data && \
@@ -113,5 +111,8 @@ void	push_swap3(t_stack **a, t_stack **b)
 		else
 			flag = push_swap_lg(a, b);
 	}
+	if (*a && (*a)->next && !(*a)->next->next && (*a)->data > (*a)->next->data)
+		sa(a, b);
+	print_stack(*a, *b);
 	sort(a, b);
 }

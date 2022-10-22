@@ -6,23 +6,11 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 00:54:33 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/22 01:35:49 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/10/22 22:24:42 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/stack.h"
-#include <stdio.h>
-
-static void	print_stack(t_stack *stack)
-{
-	while (stack)
-	{
-		printf("%d[%d] -> ", stack->data, stack->index);
-		stack = stack->next;
-	}
-	printf ("NULL\n");
-}
-
 
 int	main(int argc, char **argv)
 {
@@ -39,9 +27,8 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	print_stack(a);
+	print_stack(a, b);
 	push_swap3(&a, &b);
-	print_stack(a);
-	print_stack(b);
+	// print_stack(a, b);
 	return (0);
 }
