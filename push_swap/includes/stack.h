@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 12:31:11 by  ptippaya         #+#    #+#             */
-/*   Updated: 2022/10/22 12:13:10 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:58:15 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ typedef struct s_stack
 	unsigned int	index;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct s_count
+{
+	unsigned int	up;
+	unsigned int	down;
+}	t_count;
 
 void	sa(t_stack **a, t_stack **b);
 void	sb(t_stack **a, t_stack **b);

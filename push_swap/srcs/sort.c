@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 01:52:14 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/22 21:19:20 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/10/23 13:40:46 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,33 +17,71 @@
  * Not working with first or last element
  */
 
-static void	counter(t_stack *stack, t_stack *target, \
-			unsigned int *up, unsigned int *down)
+static void	counter_firstlast(t_stack *stack, t_stack *last, t_count *count)
+{
+	t_stack	*first;
+
+	first = stack;
+	while (first && first->data > last->data)
+	{
+		(count->up)++;
+		first = first->next;
+		last = last->next;
+		if (!last)
+			last = stack;
+	}
+	while (first)
+	{
+		(count->down)++;
+		first = first->next;
+	}
+}
+
+static void	counter_between(t_stack *stack, t_stack *last, \
+t_stack *target, t_count *count)
 {
 	t_stack	*cur;
-	t_stack	*last;
 
 	cur = stack;
-	last = stack;
-	(*up) = 0;
-	(*down) = 0;
-	while (last->next)
-		last = last->next;
-	while (cur && !(cur->data > target->data && target->data > last->data))
+	while (cur && !(cur->data < target->data && target->data < last->data) && \
+	cur->data < last->data)
 	{
-		(*up)++;
+		(count->up)++;
 		cur = cur->next;
-		if (cur->data > last->data)
-			break ;
 		last = last->next;
 		if (!last)
 			last = stack;
 	}
 	while (cur)
 	{
+		(count->down)++;
 		cur = cur->next;
-		(*down)++;
 	}
+}
+
+static void	counter(t_stack *stack, t_stack *target, t_count *count)
+{
+	t_stack	*last;
+	t_stack	*max;
+	t_stack	*min;
+
+	last = stack;
+	max = stack;
+	min = stack;
+	count->up = 0;
+	count->down = 0;
+	while (last->next)
+	{
+		if (last->data < min->data)
+			min = last;
+		if (last->data > max->data)
+			max = last;
+		last = last->next;
+	}
+	if (target->data < min->data || target->data > max->data)
+		counter_firstlast(stack, last, count);
+	else
+		counter_between(stack, last, target, count);
 }
 
 /*
@@ -57,24 +95,23 @@ static void	counter(t_stack *stack, t_stack *target, \
 
 void	sort(t_stack **a, t_stack **b)
 {
-	unsigned int	up;
-	unsigned int	down;
-	unsigned int	count;
+	t_count			count;
+	unsigned int	i;
 
 	while (*b)
 	{
 		if (*a && (*a)->next && (*a)->next->next)
 		{
-			up = 0;
-			down = 0;
-			count = 0;
-			counter(*a, *b, &up, &down);
-			printf("%u %u\n", up, down);
-			if ((up || down) && up <= down)
-				while (count++ < up)
+			i = 0;
+			count.up = 0;
+			count.down = 0;
+			counter(*a, *b, *counter);
+			printf("%u %u\n", count.up, count.down);
+			if ((count.up || count.down) && count.up <= count.down)
+				while (i++ < count.up)
 					ra(a, b);
-			else if (up > down)
-				while (count++ < down)
+			else if (count.up > count.down)
+				while (i++ < count.down)
 					rra(a, b);
 			pa(a, b);
 		}
