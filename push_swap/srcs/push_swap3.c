@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 23:52:09 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/22 12:13:38 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/10/23 22:59:34 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,6 @@ void	push_swap3(t_stack **a, t_stack **b)
 	}
 	if (*a && (*a)->next && !(*a)->next->next && (*a)->data > (*a)->next->data)
 		sa(a, b);
-	print_stack(*a, *b);
-	sort(a, b);
+	if (*b)
+		sort(a, b);
 }

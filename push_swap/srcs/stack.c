@@ -6,11 +6,12 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 00:42:41 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/22 12:14:28 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:11:42 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/stack.h"
+// #include <stdio.h>
 
 /*
  * Function:	isdup
@@ -116,20 +117,20 @@ void	init_index(t_stack *stack)
 	}
 }
 
-void	print_stack(t_stack *a, t_stack *b)
-{
-	printf("------------------------------------\n");
-	while (a)
-	{
-		printf("%d[%d] -> ", a->data, a->index);
-		a = a->next;
-	}
-	printf ("NULL\n");
-	while (b)
-	{
-		printf("%d[%d] -> ", b->data, b->index);
-		b = b->next;
-	}
-	printf ("NULL\n");
-	printf("------------------------------------\n");
-}
+// void	print_stack(t_stack *a, t_stack *b)
+// {
+// 	printf("------------------------------------\n");
+// 	while (a)
+// 	{
+// 		printf("%d[%d] -> ", a->data, a->index);
+// 		a = a->next;
+// 	}
+// 	printf ("NULL\n");
+// 	while (b)
+// 	{
+// 		printf("%d[%d] -> ", b->data, b->index);
+// 		b = b->next;
+// 	}
+// 	printf ("NULL\n");
+// 	printf("------------------------------------\n");
+// }

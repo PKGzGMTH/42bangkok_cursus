@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 12:31:11 by  ptippaya         #+#    #+#             */
-/*   Updated: 2022/10/23 11:58:15 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:10:43 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <stdbool.h>
-# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -50,6 +49,6 @@ void	init_index(t_stack *stack);
 void	push_swap3(t_stack **a, t_stack **b);
 void	sort(t_stack **a, t_stack **b);
 
-void	print_stack(t_stack *a, t_stack *b);
+// void	print_stack(t_stack *a, t_stack *b);
 
 #endif
