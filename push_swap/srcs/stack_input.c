@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 13:33:21 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/21 14:59:29 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:14:31 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ static bool	check_input(int argc, char **argv)
 
 static bool	stoi(t_stack **stack, char *str)
 {
-	int	n;
-	int	mul;
+	long	n;
+	int		mul;
 
 	while (*str)
 	{
@@ -71,13 +71,10 @@ static bool	stoi(t_stack **stack, char *str)
 		}
 		n = 0;
 		while ('0' <= *str && *str <= '9')
-		{
-			if (n * 10 + (*str - '0') < n && mul == 1)
-				return (0);
 			n = n * 10 + (*(str++) - '0');
-			if (!('0' <= *str && *str <= '9') && !push(stack, n * mul))
-				return (0);
-		}
+		if (!(-2147483648 <= n * mul && n * mul <= 2147483647) \
+		|| !push(stack, n * mul))
+			return (0);
 	}
 	return (1);
 }

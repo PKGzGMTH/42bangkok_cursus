@@ -6,16 +6,11 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 01:52:14 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/23 23:10:44 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:17:13 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/stack.h"
-
-/*
- * Broken now
- * Not working with first or last element
- */
 
 static void	counter_firstlast(t_stack *stack, t_count *count)
 {
@@ -97,28 +92,6 @@ t_count *count, bool lastround)
 	else
 		counter_between(stack, target, count);
 }
-
-/*
- * Not working now
- * Recoding is easier than debug and edit
- * to Me in future: just check all node of stack is sorted or not
- * 		if sorted node more than unsorted node just rotate Stack A
- * 		until find unsorted node and sort it!
- * 		I'm sleepy now, Goodbye!
- */
-
-// static bool	check(t_stack *a, t_stack *b)
-// {
-// 	int	value;
-
-// 	if (b)
-// 		return (0);
-// 	value = a->data;
-// 	while (a)
-// 		if (a->data < value)
-// 			return (0);
-// 	return (1);
-// }
 
 void	sort(t_stack **a, t_stack **b)
 {
