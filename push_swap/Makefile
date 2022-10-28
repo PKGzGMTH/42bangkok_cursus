@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 09:57:59 by ptippaya          #+#    #+#              #
-#    Updated: 2022/10/23 23:04:59 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/10/28 19:42:34 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC =	stack.c			\
 		rotate.c		\
 		reversrotate.c	\
 		push_swap3.c	\
-		sort.c
+		sort.c			\
+		main.c
 SRCS = $(addprefix $(SRCDIR), $(SRC))
 OBJ = $(SRC:.c=.o)
 OBJS = $(addprefix $(OBJDIR), $(OBJ))
@@ -34,14 +35,13 @@ $(NAME):
 	$(CC) $(CFLAG) -c $(SRCS)
 	mkdir -p objs
 	mv $(OBJ) $(OBJDIR)
-	ar -rcs $(NAME).a $(OBJS)
-	$(CC) $(CFLAG) -o $(NAME) srcs/main.c $(NAME).a
+	$(CC) $(CFLAG) -o $(NAME) $(OBJS)
 
 clean:
 	rm -rf $(OBJS) $(OBJDIR)
 
 fclean: clean
-	@rm -rf $(NAME).a $(NAME)
+	rm -rf $(NAME)
 
 norm:
 	@norminette -R CheckDefine $(INCLUDE)
@@ -49,9 +49,4 @@ norm:
 
 re: fclean $(NAME)
 
-test:
-	@clear
-	@$(CC) $(CFLAG) -o test.out $(TESTSOURCE)
-	./test.out
-
-.PHONY: $(NAME) all norm test clean fclean re
+.PHONY: $(NAME) all norm clean fclean re
