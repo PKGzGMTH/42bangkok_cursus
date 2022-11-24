@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:47:53 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/20 20:49:32 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/11/24 03:06:12 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,23 +39,26 @@ static void	revers_rotate(t_stack **stack)
 	}
 }
 
-void	rra(t_stack **a, t_stack **b)
+size_t	rra(t_stack **a, t_stack **b)
 {
 	(void)b;
 	revers_rotate(a);
 	write (1, "rra\n", 4);
+	return (1);
 }
 
-void	rrb(t_stack **a, t_stack **b)
+size_t	rrb(t_stack **a, t_stack **b)
 {
 	(void)a;
 	revers_rotate(b);
 	write (1, "rrb\n", 4);
+	return (1);
 }
 
-void	rrr(t_stack **a, t_stack **b)
+size_t	rrr(t_stack **a, t_stack **b)
 {
 	revers_rotate(a);
 	revers_rotate(b);
 	write (1, "rrr\n", 4);
+	return (1);
 }

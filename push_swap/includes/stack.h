@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 12:31:11 by  ptippaya         #+#    #+#             */
-/*   Updated: 2022/10/23 23:10:43 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/11/24 04:08:01 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <stdbool.h>
+# include <stdio.h>
 
 typedef struct s_stack
 {
 	int				data;
-	unsigned int	index;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -30,25 +30,35 @@ typedef struct s_count
 	unsigned int	down;
 }	t_count;
 
-void	sa(t_stack **a, t_stack **b);
-void	sb(t_stack **a, t_stack **b);
-void	ss(t_stack **a, t_stack **b);
-void	pa(t_stack **a, t_stack **b);
-void	pb(t_stack **a, t_stack **b);
-void	ra(t_stack **a, t_stack **b);
-void	rb(t_stack **a, t_stack **b);
-void	rr(t_stack **a, t_stack **b);
-void	rra(t_stack **a, t_stack **b);
-void	rrb(t_stack **a, t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
+size_t	sa(t_stack **a, t_stack **b);
+size_t	sb(t_stack **a, t_stack **b);
+size_t	ss(t_stack **a, t_stack **b);
+size_t	pa(t_stack **a, t_stack **b);
+size_t	pb(t_stack **a, t_stack **b);
+size_t	ra(t_stack **a, t_stack **b);
+size_t	rb(t_stack **a, t_stack **b);
+size_t	rr(t_stack **a, t_stack **b);
+size_t	rra(t_stack **a, t_stack **b);
+size_t	rrb(t_stack **a, t_stack **b);
+size_t	rrr(t_stack **a, t_stack **b);
 
-bool	init_stack(t_stack **stack, int argc, char **argv);
+int		*sorted_array(t_stack *stack);
+int		get_med(t_stack *stack, size_t n);
+bool	issorted(t_stack *stack);
 bool	push(t_stack **stack, int num);
+bool	init_stack(t_stack **stack, int argc, char **argv);
 void	freestack(t_stack **stack);
-void	init_index(t_stack *stack);
-void	push_swap3(t_stack **a, t_stack **b);
 void	sort(t_stack **a, t_stack **b);
-
-// void	print_stack(t_stack *a, t_stack *b);
+void	sort_a(t_stack **a, t_stack **b);
+void	push_swap(t_stack **a, t_stack **b);
+void	dual_swap(t_stack **a, t_stack **b);
+void	print_stack(t_stack *a, t_stack *b, char *s);
+void	push_back_range(t_stack **a, t_stack **b, size_t n);
+size_t	length(t_stack *stack);
+size_t	push_med_2a(t_stack **a, t_stack **b);
+size_t	push_med_2b(t_stack **a, t_stack **b);
+size_t	push_back(t_stack **a, t_stack **b, size_t n);
+size_t	psloop(t_stack **a, t_stack **b, \
+		size_t (*function)(t_stack **, t_stack **), int count);
 
 #endif

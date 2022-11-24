@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 01:52:14 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/25 18:17:13 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:08:10 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void	sort(t_stack **a, t_stack **b)
 		{
 			i = 0;
 			finish = !*b;
+			dual_swap(a, b);
 			counter(*a, *b, &count, finish);
 			if ((count.up || count.down) && count.up <= count.down)
 				while (i++ < count.up)

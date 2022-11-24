@@ -6,21 +6,12 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 13:33:21 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/25 18:14:31 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/10/28 20:48:03 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/stack.h"
 #include <stdio.h>
-
-/*
- * Function:	check_input
- * ------------------------
- *	Check each argument is number (+, -) or space.
- *
- *	returns:	1 (Argument are integer only)
- *				0 (Argument aren't integer only)
- */
 
 static bool	check_input(int argc, char **argv)
 {
@@ -43,16 +34,6 @@ static bool	check_input(int argc, char **argv)
 	}
 	return (1);
 }
-
-/*
- * Function:	stoi
- * -----------------
- *	Convert each number in string to integer and push in back of stack.
- *	this function can push integer to stack more than one time.
- *
- *	returns:	1 (Convert argument to integer and push successful)
- *				0 (Argument are not integer or push function error)
- */
 
 static bool	stoi(t_stack **stack, char *str)
 {
@@ -79,15 +60,6 @@ static bool	stoi(t_stack **stack, char *str)
 	return (1);
 }
 
-/*
- * Function:	init_stack
- * -----------------------
- *	Initial all number in string to stack linked-list
- *
- *	returns:	 1 (Successful)
- *				 0 (Error)
- */
-
 bool	init_stack(t_stack **stack, int argc, char **argv)
 {
 	int	i;
@@ -99,6 +71,5 @@ bool	init_stack(t_stack **stack, int argc, char **argv)
 	while (i < argc)
 		if (!stoi(stack, argv[i++]))
 			return (0);
-	init_index(*stack);
 	return (1);
 }

@@ -6,13 +6,13 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:51:58 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/20 18:23:24 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/11/24 03:07:19 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/stack.h"
 
-void	sa(t_stack **a, t_stack **b)
+size_t	sa(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
 
@@ -25,9 +25,10 @@ void	sa(t_stack **a, t_stack **b)
 		(*a)->next = temp;
 	}
 	write(1, "sa\n", 3);
+	return (1);
 }
 
-void	sb(t_stack **a, t_stack **b)
+size_t	sb(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
 
@@ -40,9 +41,10 @@ void	sb(t_stack **a, t_stack **b)
 		(*b)->next = temp;
 	}
 	write(1, "sb\n", 3);
+	return (1);
 }
 
-void	ss(t_stack **a, t_stack **b)
+size_t	ss(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
 
@@ -61,4 +63,5 @@ void	ss(t_stack **a, t_stack **b)
 		(*b)->next = temp;
 	}
 	write(1, "ss\n", 3);
+	return (1);
 }

@@ -6,21 +6,11 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 00:42:41 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/23 23:11:42 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/11/24 04:17:00 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/stack.h"
-// #include <stdio.h>
-
-/*
- * Function:	isdup
- * -----------------
- *	Check the integer is duplicate in stack
- *
- *	returns:	1 (Integer is duplicate)
- *				0 (Integer is not duplicate)
- */
 
 static bool	isdup(t_stack *stack, int num)
 {
@@ -32,17 +22,6 @@ static bool	isdup(t_stack *stack, int num)
 	}
 	return (0);
 }
-
-/*
- * Function:	push
- * -----------------
- *	Create new node with int data (num)
- *	it will push new node in back of last node.
- *	if stack empty it will create new node as head of stack.
- *
- *	returns:	1 (Successful)
- *				0 (Memory allocation Error or integer are duplicate)
- */
 
 bool	push(t_stack **stack, int num)
 {
@@ -72,12 +51,6 @@ bool	push(t_stack **stack, int num)
 	return (1);
 }
 
-/*
- * Function:	freestack
- * ----------------------
- *	Free all node node in stack
- */
-
 void	freestack(t_stack **stack)
 {
 	t_stack	*del;
@@ -91,46 +64,46 @@ void	freestack(t_stack **stack)
 	*stack = NULL;
 }
 
-/*
- * Function:	init_index
- * -----------------------
- *	initial index of each node in stack
- */
-
-void	init_index(t_stack *stack)
+size_t	length(t_stack *stack)
 {
-	t_stack			*cur;
-	t_stack			*head;
+	size_t	length;
 
-	cur = stack;
-	while (cur)
+	length = 0;
+	while (stack)
 	{
-		cur->index = 0;
-		head = stack;
-		while (head)
-		{
-			if (head->data < cur->data)
-				cur->index += 1;
-			head = head->next;
-		}
-		cur = cur->next;
+		length++;
+		stack = stack->next;
 	}
+	return (length);
 }
 
-// void	print_stack(t_stack *a, t_stack *b)
-// {
-// 	printf("------------------------------------\n");
-// 	while (a)
-// 	{
-// 		printf("%d[%d] -> ", a->data, a->index);
-// 		a = a->next;
-// 	}
-// 	printf ("NULL\n");
-// 	while (b)
-// 	{
-// 		printf("%d[%d] -> ", b->data, b->index);
-// 		b = b->next;
-// 	}
-// 	printf ("NULL\n");
-// 	printf("------------------------------------\n");
-// }
+bool	issorted(t_stack *stack)
+{
+	while (stack)
+	{
+		if (stack->next && stack->next->data < stack->data)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
+
+void	print_stack(t_stack *a, t_stack *b, char *s)
+{
+	printf("====== %s ====== \n", s);
+	printf("------------------------------------\n");
+	while (a)
+	{
+		printf("%d -> ", a->data);
+		a = a->next;
+	}
+	printf ("NULL\n");
+	while (b)
+	{
+		printf("%d -> ", b->data);
+		b = b->next;
+	}
+	printf ("NULL\n");
+	printf("------------------------------------\n");
+	fflush(stdout);
+}

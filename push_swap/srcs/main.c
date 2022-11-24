@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 13:12:02 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/23 23:10:42 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/11/24 05:55:25 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	main(int argc, char **argv)
 	if (!init_stack(&a, argc, argv))
 		write(2, "Error\n", 6);
 	else
-		push_swap3(&a, &b);
+		push_swap(&a, &b);
+	if (issorted(a))
+		printf("it sorted!\n");
+	print_stack(a, b, "final");
 	freestack(&a);
 	return (0);
 }
