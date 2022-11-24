@@ -6,13 +6,13 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 09:57:59 by ptippaya          #+#    #+#              #
-#    Updated: 2022/10/28 19:42:34 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/11/24 05:28:25 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 INCLUDE = includes/stack.h
-CC = gcc
+CC = cc
 CFLAG = -Wall -Wextra -Werror
 SRCDIR = srcs/
 OBJDIR = objs/
@@ -22,8 +22,14 @@ SRC =	stack.c			\
 		push.c			\
 		rotate.c		\
 		reversrotate.c	\
-		push_swap3.c	\
+		push_swap.c		\
+		push_swap_1.c	\
+		push_back.c		\
+		push_back_range.c	\
 		sort.c			\
+		sorted_arr.c	\
+		median.c		\
+		util.c			\
 		main.c
 SRCS = $(addprefix $(SRCDIR), $(SRC))
 OBJ = $(SRC:.c=.o)
@@ -32,9 +38,7 @@ TESTSOURCE = $(SRCS) srcs/test.c
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAG) -c $(SRCS)
-	mkdir -p objs
-	mv $(OBJ) $(OBJDIR)
+	$(CC) $(CFLAG) -c $(SRCS); mkdir -p objs; mv $(OBJ) $(OBJDIR)
 	$(CC) $(CFLAG) -o $(NAME) $(OBJS)
 
 clean:
@@ -49,4 +53,8 @@ norm:
 
 re: fclean $(NAME)
 
-.PHONY: $(NAME) all norm clean fclean re
+test: re
+	@clear
+	@python3 gen.py > ./gen.txt;
+	./push_swap $$(cat ./gen.txt) > ./output.txt
+.PHONY: $(NAME) all norm clean fclean re test
