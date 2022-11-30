@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 23:17:54 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/01 00:42:43 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 01:29:20 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,6 @@ void	push_back_range(t_stack **a, t_stack **b, size_t n)
 	rotate = 0;
 	rotated = 0;
 	med = get_med(*b, n);
-	// printf("med: %d\tn: %ld\n", med, n);
-	// if (issorted(*a))
-	// 	printf("it sorted!\n");
-	// print_stack(*a, *b, "median");
 	while (is_morethan_med(*b, med))
 	{
 		if ((*b)->data > med)
@@ -100,8 +96,6 @@ void	push_back_range(t_stack **a, t_stack **b, size_t n)
 		else
 			rotated += rb(a, b);
 	}
-	// printf("pushed:%ld\tremain: %ld\n", pushed, n - pushed);
-	// fflush(stdout);
 	while (rotate++ < rotated)
 		rrb(a, b);
 	push_back_range2(a, b, pushed, n - pushed);

@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 09:57:59 by ptippaya          #+#    #+#              #
-#    Updated: 2022/11/24 05:28:25 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/12/01 01:30:07 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ SRC =	stack.c			\
 		push_swap_1.c	\
 		push_back.c		\
 		push_back_range.c	\
-		sort.c			\
 		sorted_arr.c	\
 		median.c		\
 		util.c			\

@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 00:38:47 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/01 00:32:12 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 01:04:24 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ t_count *count, t_count *find)
 int	get_med(t_stack *stack, size_t n)
 {
 	int		med;
+	int		*arr;
 	size_t	i;
 	t_stack	*h;
 	t_stack	*temp;
@@ -81,7 +82,9 @@ int	get_med(t_stack *stack, size_t n)
 	temp = h->next;
 	h->next = NULL;
 	h = stack;
-	med = sorted_array(h)[n / 2];
+	arr = sorted_array(h);
+	med = arr[n / 2];
+	free (arr);
 	i = 0;
 	while (i++ < n - 1 && h)
 		h = h->next;
@@ -97,7 +100,7 @@ size_t	push_med_2b(t_stack **a, t_stack **b)
 	t_count	count;
 
 	pcount = 0;
-	median = sorted_array(*a)[length(*a) / 2];
+	median = get_med(*a, length(*a));
 	while (!is_lessthan_med(*a, median))
 	{
 		count_up_median(*a, median, &count, &find);

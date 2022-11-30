@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 00:42:41 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/01 00:34:20 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 01:29:49 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,22 +88,22 @@ bool	issorted(t_stack *stack)
 	return (1);
 }
 
-void	print_stack(t_stack *a, t_stack *b, char *s)
-{
-	printf("====== %s ====== \n", s);
-	printf("------------------------------------\n");
-	while (a)
-	{
-		printf("%d -> ", a->data);
-		a = a->next;
-	}
-	printf ("NULL\n");
-	while (b)
-	{
-		printf("%d -> ", b->data);
-		b = b->next;
-	}
-	printf ("NULL\n");
-	printf("------------------------------------\n");
-	fflush(stdout);
-}
+// void	print_stack(t_stack *a, t_stack *b, char *s)
+// {
+// 	printf("====== %s ====== \n", s);
+// 	printf("------------------------------------\n");
+// 	while (a)
+// 	{
+// 		printf("%d -> ", a->data);
+// 		a = a->next;
+// 	}
+// 	printf ("NULL\n");
+// 	while (b)
+// 	{
+// 		printf("%d -> ", b->data);
+// 		b = b->next;
+// 	}
+// 	printf ("NULL\n");
+// 	printf("------------------------------------\n");
+// 	fflush(stdout);
+// }
