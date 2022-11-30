@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 00:38:47 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/11/24 03:56:20 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 00:32:12 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,35 +66,6 @@ t_count *count, t_count *find)
 		stack = stack->next;
 	}
 }
-
-// size_t	push_med_2a(t_stack **a, t_stack **b)
-// {
-// 	int		median;
-// 	size_t	pcount;
-// 	t_count	find;
-// 	t_count	count;
-
-// 	pcount = 0;
-// 	median = sorted_array(*b)[length(*b) / 2];
-// 	while (!is_lessthan_med(*a, median))
-// 	{
-// 		count_up_median(*b, median, &count, &find);
-// 		count_down_median(*b, median, &count, &find);
-// 		if ((count.up && count.down && count.up == count.down && find.down &&
-//find.up < find.down) || (count.up > count.down && find.down))
-// 		{
-// 			psloop(a, b, rrb, count.down);
-// 			pcount += psloop(a, b, pa, find.down);
-// 		}
-// 		else
-// 		{
-// 			psloop(a, b, rb, count.up);
-// 			pcount += psloop(a, b, pa, find.up);
-// 		}
-// 		pcount++;
-// 	}
-// 	return (pcount);
-// }
 
 int	get_med(t_stack *stack, size_t n)
 {

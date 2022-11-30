@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 23:17:54 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/11/24 06:07:05 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 00:42:43 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,10 @@ static void	push_back3(t_stack **a, t_stack **b)
 
 static void	push_back4(t_stack **a, t_stack **b)
 {
-	if ((*a)->data < (*a)->next->data && \
-	(*a)->next->data < (*a)->next->next->data && \
-	(*a)->next->next->data < (*a)->next->next->next->data)
+	if (issorted(*a))
 		return ;
 	psloop(a, b, pb, 2);
+	dual_swap(a, b);
 	if ((*b)->data > (*a)->data && (*b)->data > (*a)->next->data)
 	{
 		pb(a, b);
@@ -55,6 +54,7 @@ static void	push_back4(t_stack **a, t_stack **b)
 	pa(a, b);
 	dual_swap(a, b);
 	pa(a, b);
+	dual_swap(a, b);
 }
 
 static void	push_back_range2(t_stack **a, t_stack **b, \
@@ -72,7 +72,7 @@ size_t pushed, size_t remain)
 		push_back3(a, b);
 	else if (pushed == 2)
 		dual_swap(a, b);
-	else if (remain > 4)
+	if (remain > 4)
 		push_back_range(a, b, remain);
 	else if (remain > 0)
 		push_back(a, b, remain);
@@ -89,8 +89,10 @@ void	push_back_range(t_stack **a, t_stack **b, size_t n)
 	rotate = 0;
 	rotated = 0;
 	med = get_med(*b, n);
-	printf("med: %d\tn: %ld\n", med, n);
-	print_stack(*a, *b, "median");
+	// printf("med: %d\tn: %ld\n", med, n);
+	// if (issorted(*a))
+	// 	printf("it sorted!\n");
+	// print_stack(*a, *b, "median");
 	while (is_morethan_med(*b, med))
 	{
 		if ((*b)->data > med)
@@ -98,8 +100,8 @@ void	push_back_range(t_stack **a, t_stack **b, size_t n)
 		else
 			rotated += rb(a, b);
 	}
-	printf("pushed:%ld\tremain: %ld\n", pushed, n - pushed);
-	fflush(stdout);
+	// printf("pushed:%ld\tremain: %ld\n", pushed, n - pushed);
+	// fflush(stdout);
 	while (rotate++ < rotated)
 		rrb(a, b);
 	push_back_range2(a, b, pushed, n - pushed);

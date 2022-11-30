@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 23:52:09 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/11/24 05:55:53 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 00:31:47 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	push_swap(t_stack **a, t_stack **b)
 	remain = 0;
 	if (issorted(*a) && !length(*b))
 		return ;
+
 	if (!issorted(*a) && length(*a) > 3)
 	{
 		remain = push_med_2b(a, b);
@@ -29,5 +30,5 @@ void	push_swap(t_stack **a, t_stack **b)
 	if (issorted(*a) && *b && remain && remain > 4)
 		push_back_range(a, b, remain);
 	else if (issorted(*a) && *b && remain && remain <= 4)
-		remain -= push_back(a, b, remain);
+		push_back(a, b, remain);
 }

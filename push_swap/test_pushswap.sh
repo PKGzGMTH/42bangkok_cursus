@@ -184,23 +184,23 @@ echo
 
 ## Random Size Test
 #
-# Number: [1 - 3] * 5 
+# Number: [1 - 3] * 5
 START=1
 END=3
 ROUND=5
 test_size $START $END $ROUND
-# Number: [1 - 5] * 10 
+# Number: [1 - 5] * 10
 START=1
 END=5
-ROUND=10
+ROUND=100
 test_size $START $END $ROUND
 # Number: [1 - 100] * 20
 START=1
 END=100
-ROUND=20
+ROUND=100
 test_size $START $END $ROUND
 # Number: [1 - 500] * 20
 START=1
 END=500
-ROUND=20
+ROUND=100
 test_size $START $END $ROUND
