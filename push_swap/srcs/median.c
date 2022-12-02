@@ -6,11 +6,11 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 00:38:47 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/01 01:04:24 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:08:43 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/stack.h"
+#include "../includes/push_swap.h"
 
 static bool	is_lessthan_med(t_stack *stack, int median)
 {

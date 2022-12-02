@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:16:51 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/01 19:09:06 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/02 11:54:53 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/push_swap_bonus.h"
 
 static void	rotate(t_stack **stack)
 {
@@ -33,7 +33,6 @@ size_t	ra(t_stack **a, t_stack **b)
 {
 	(void)b;
 	rotate(a);
-	write (1, "ra\n", 3);
 	return (1);
 }
 
@@ -41,7 +40,6 @@ size_t	rb(t_stack **a, t_stack **b)
 {
 	(void)a;
 	rotate(b);
-	write (1, "rb\n", 3);
 	return (1);
 }
 
@@ -49,6 +47,5 @@ size_t	rr(t_stack **a, t_stack **b)
 {
 	rotate(a);
 	rotate(b);
-	write (1, "rr\n", 3);
 	return (1);
 }

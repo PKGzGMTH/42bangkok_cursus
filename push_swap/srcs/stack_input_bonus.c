@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_input.c                                      :+:      :+:    :+:   */
+/*   stack_input_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 13:33:21 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/02 12:58:36 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/02 12:59:15 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/push_swap_bonus.h"
 
 static bool	isint(char *s)
 {

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 12:31:11 by  ptippaya         #+#    #+#             */
-/*   Updated: 2022/11/24 04:08:01 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/02 11:39:18 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_H
-# define STACK_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
@@ -23,12 +23,6 @@ typedef struct s_stack
 	int				data;
 	struct s_stack	*next;
 }	t_stack;
-
-typedef struct s_count
-{
-	unsigned int	up;
-	unsigned int	down;
-}	t_count;
 
 size_t	sa(t_stack **a, t_stack **b);
 size_t	sb(t_stack **a, t_stack **b);
@@ -42,23 +36,10 @@ size_t	rra(t_stack **a, t_stack **b);
 size_t	rrb(t_stack **a, t_stack **b);
 size_t	rrr(t_stack **a, t_stack **b);
 
-int		*sorted_array(t_stack *stack);
-int		get_med(t_stack *stack, size_t n);
+int		checker(t_stack **a, t_stack **b);
 bool	issorted(t_stack *stack);
 bool	push(t_stack **stack, int num);
 bool	init_stack(t_stack **stack, int argc, char **argv);
 void	freestack(t_stack **stack);
-void	sort(t_stack **a, t_stack **b);
-void	sort_a(t_stack **a, t_stack **b);
-void	push_swap(t_stack **a, t_stack **b);
-void	dual_swap(t_stack **a, t_stack **b);
-void	print_stack(t_stack *a, t_stack *b, char *s);
-void	push_back_range(t_stack **a, t_stack **b, size_t n);
-size_t	length(t_stack *stack);
-size_t	push_med_2a(t_stack **a, t_stack **b);
-size_t	push_med_2b(t_stack **a, t_stack **b);
-size_t	push_back(t_stack **a, t_stack **b, size_t n);
-size_t	psloop(t_stack **a, t_stack **b, \
-		size_t (*function)(t_stack **, t_stack **), int count);
 
 #endif

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   stack_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 00:42:41 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/02 12:10:56 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 20:51:24 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/push_swap_bonus.h"
 
 static bool	isdup(t_stack *stack, int num)
 {
@@ -62,19 +62,6 @@ void	freestack(t_stack **stack)
 		free(del);
 	}
 	*stack = NULL;
-}
-
-size_t	length(t_stack *stack)
-{
-	size_t	length;
-
-	length = 0;
-	while (stack)
-	{
-		length++;
-		stack = stack->next;
-	}
-	return (length);
 }
 
 bool	issorted(t_stack *stack)

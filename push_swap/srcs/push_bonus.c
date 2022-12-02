@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   push_bous.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:25:00 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/01 19:08:59 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 20:51:35 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/push_swap_bonus.h"
 
 size_t	pa(t_stack **a, t_stack **b)
 {
@@ -23,7 +23,6 @@ size_t	pa(t_stack **a, t_stack **b)
 		temp->next = *a;
 		*a = temp;
 	}
-	write (1, "pa\n", 3);
 	return (1);
 }
 
@@ -38,6 +37,5 @@ size_t	pb(t_stack **a, t_stack **b)
 		temp->next = *b;
 		*b = temp;
 	}
-	write (1, "pb\n", 3);
 	return (1);
 }

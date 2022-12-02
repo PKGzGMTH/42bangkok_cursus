@@ -6,11 +6,11 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:11:14 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/01 01:29:53 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:09:32 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/stack.h"
+#include "../includes/push_swap.h"
 
 size_t	psloop(t_stack **a, t_stack **b, \
 size_t (*function)(t_stack **, t_stack **), int count)

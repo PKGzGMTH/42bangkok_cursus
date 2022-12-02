@@ -6,11 +6,11 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:59:33 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/10/29 14:39:26 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:09:15 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/stack.h"
+#include "../includes/push_swap.h"
 
 static int	get_next_min(t_stack *stack, long lastmin)
 {

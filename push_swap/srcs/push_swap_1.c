@@ -6,11 +6,11 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 12:36:38 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/11/23 23:05:09 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:08:53 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/stack.h"
+#include "../includes/push_swap.h"
 
 static void	sort_a_3(t_stack **a, t_stack **b)
 {

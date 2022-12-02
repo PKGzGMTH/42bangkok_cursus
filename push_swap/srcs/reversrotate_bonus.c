@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reversrotate.c                                     :+:      :+:    :+:   */
+/*   reversrotate_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:47:53 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/01 19:09:03 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/02 11:54:50 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/push_swap_bonus.h"
 
 static void	revers_rotate(t_stack **stack)
 {
@@ -43,7 +43,6 @@ size_t	rra(t_stack **a, t_stack **b)
 {
 	(void)b;
 	revers_rotate(a);
-	write (1, "rra\n", 4);
 	return (1);
 }
 
@@ -51,7 +50,6 @@ size_t	rrb(t_stack **a, t_stack **b)
 {
 	(void)a;
 	revers_rotate(b);
-	write (1, "rrb\n", 4);
 	return (1);
 }
 
@@ -59,6 +57,5 @@ size_t	rrr(t_stack **a, t_stack **b)
 {
 	revers_rotate(a);
 	revers_rotate(b);
-	write (1, "rrr\n", 4);
 	return (1);
 }

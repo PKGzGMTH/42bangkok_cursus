@@ -6,11 +6,11 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:29:51 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/11/30 23:54:02 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:08:50 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/stack.h"
+#include "../includes/push_swap.h"
 
 static void	push_back2(t_stack **a, t_stack **b)
 {
