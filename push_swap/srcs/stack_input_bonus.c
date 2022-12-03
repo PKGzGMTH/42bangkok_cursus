@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 13:33:21 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/02 12:59:15 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/04 00:50:02 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static bool	stoi(t_stack **stack, char *str)
 		n = 0;
 		while ('0' <= *str && *str <= '9')
 			n = n * 10 + (*(str++) - '0');
-		if (!(-2147483648 <= n * mul && n * mul <= 2147483647))
+		if (!(-2147483648 <= n * mul && n * mul <= 2147483647) || *str == '-')
 			return (0);
 		if ('0' <= *(str - 1) && *(str - 1) <= '9' && !push(stack, n * mul))
 			return (0);
