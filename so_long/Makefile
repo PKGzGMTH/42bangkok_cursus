@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/12/05 01:31:51 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/12/06 13:15:09 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,8 +58,8 @@ LIBFT =	ft_atoi.c		\
 LIBFTS = $(addprefix libft/, $(LIBFT))
 LIBFTOBJ = $(LIBFT:.c=.o)
 
-SRC =	main.c		\
-		checkmap.c	\
+SRC =	main.c				\
+		checkmap_readfile.c	\
 		utils.c
 SRCS = $(addprefix srcs/, $(SRC))
 SRCOBJ = $(SRC:.c=.o)
