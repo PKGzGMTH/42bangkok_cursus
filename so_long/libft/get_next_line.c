@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../includes/get_next_line.h"
+#include "../includes/libft.h"
+#include "../includes/ft_printf.h"
 
 static char	*get_next_read(int fd, char *dest)
 {
@@ -49,7 +51,7 @@ static char	*get_next_dest(char *rest)
 	dest = NULL;
 	if (rest && rest[ft_strchrlen(rest, '\n')] == '\n')
 	{
-		i = ft_strchrlen(rest, '\n') + 1;
+		i = ft_strchrlen(rest, '\n');
 		dest = (char *) malloc (sizeof(char) * (i + 1));
 		if (!dest)
 			return (NULL);
@@ -81,6 +83,11 @@ static char	*get_next_rest(char	*rest)
 		dest[i] = '\0';
 		if (rest)
 			free (rest);
+	}
+	if (dest && !ft_strncmp(dest, "\0", 2))
+	{
+		free(dest);
+		dest = NULL;
 	}
 	return (dest);
 }
