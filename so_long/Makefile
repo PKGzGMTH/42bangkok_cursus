@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2022/12/06 13:15:09 by ptippaya         ###   ########.fr        #
+#    Updated: 2022/12/14 21:59:43 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ LIBFTOBJ = $(LIBFT:.c=.o)
 
 SRC =	main.c				\
 		checkmap_readfile.c	\
+		checkmap_validpath.c\
 		utils.c
 SRCS = $(addprefix srcs/, $(SRC))
 SRCOBJ = $(SRC:.c=.o)
@@ -88,4 +89,4 @@ norm:
 	@norminette -R CheckDefine $(INCLUDE)
 	@norminette -R CheckForbiddenSourceHeader $(LIBFTS) $(SRCS)
 
-.PHONY: all clean fclean bonus test norm re libft
+.PHONY: all clean fclean bonus test norm re libft $(NAME)

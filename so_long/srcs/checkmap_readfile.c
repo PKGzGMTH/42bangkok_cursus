@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 23:40:26 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/06 13:17:22 by ptippaya         ###   ########.fr       */
+/*   Updated: 2022/12/15 21:06:10 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static bool	checkfile(char *file, t_data *data)
 {
 	int	fd;
 
-	if (ft_strncmp(ft_strrchr(file, '.'), ".ber", 5))
+	if (!ft_strrchr(file, '.') || (ft_strrchr(file, '.') && \
+	ft_strncmp(ft_strrchr(file, '.'), ".ber", 5)))
 		return (0);
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
@@ -87,10 +88,7 @@ static bool	validmapsize(t_data *data)
 	return (1);
 }
 
-bool	checkmap(char *file, t_data *data)
+int	checkmap_readfile(char *file, t_data *data)
 {
-	if (!checkfile(file, data) || !initmap(data) \
-	|| !validmapsize(data))
-		return (0);
-	return (1);
+	return (checkfile(file, data) && initmap(data) && validmapsize(data));
 }
