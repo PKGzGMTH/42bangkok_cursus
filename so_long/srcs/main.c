@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 22:05:45 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/15 20:55:57 by ptippaya         ###   ########.fr       */
+/*   Updated: 2023/02/04 00:01:23 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,6 @@ static void	startup_init(t_data *data)
 	data->exit.y = 0;
 }
 
-static void	free_data(t_data *data)
-{
-	size_t	i;
-
-	i = 0;
-	while (data->map && data->map[i])
-		safefree(data->map[i++]);
-	safefree(data->map);
-}
-
 int	main(int ac, char **av)
 {
 	t_data	data;
@@ -43,8 +33,9 @@ int	main(int ac, char **av)
 	if (ac != 2)
 		return (0);
 	if (!checkmap_readfile(av[1], &data) || !checkmap_validpath(&data))
-		ft_printf("Map err\n");
-	ft_printf("finish\n");
+		ft_printf("Map err!\n");
+	ft_printf("map pass!\n");
+	mlx_setup(&data);
 	free_data(&data);
 	return (0);
 }

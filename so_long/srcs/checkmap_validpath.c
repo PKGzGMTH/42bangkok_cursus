@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 21:59:15 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/15 21:26:35 by ptippaya         ###   ########.fr       */
+/*   Updated: 2023/02/04 10:58:11 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static bool	check_walkpath(t_data *data)
 	size_t	y;
 
 	y = 1;
-	map = data->map;
+	map = mapcpy(data);
 	map = walkpath(data, map, data->start.x, data->start.y);
 	while (y < data->heigh - 1)
 	{
@@ -89,11 +89,15 @@ static bool	check_walkpath(t_data *data)
 		while (x < data->width - 1)
 		{
 			if (ft_strchr("CPE", map[y][x]))
+			{
+				free_map(map);
 				return (0);
+			}
 			x++;
 		}
 		y++;
 	}
+	free_map(map);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 00:21:00 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/15 21:00:45 by ptippaya         ###   ########.fr       */
+/*   Updated: 2023/02/04 11:05:22 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,43 @@ void	safefree(void *content)
 		free(content);
 }
 
+void	free_map(char **map)
+{
+	size_t	i;
+
+	i = 0;
+	while (map && map[i])
+		safefree(map[i++]);
+	safefree(map);
+}
+
+void	free_data(t_data *data)
+{
+	free_map(data->map);
+	safefree(data->mlx);
+}
+
 size_t	init_position(t_posotion *p, size_t x, size_t y)
 {
 	p->x = x;
 	p->y = y;
 	return (1);
+}
+
+char	**mapcpy(t_data *data)
+{
+	char	**dest;
+	size_t	h;
+
+	h = 0;
+	dest = (char **) malloc (sizeof(char *) * (data->heigh + 1));
+	if (!dest)
+		return (NULL);
+	dest[data->heigh] = NULL;
+	while (h < data->heigh)
+	{
+		dest[h] = ft_strdup(data->map[h]);
+		h++;
+	}
+	return (dest);
 }
