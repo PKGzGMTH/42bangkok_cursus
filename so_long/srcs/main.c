@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 22:05:45 by ptippaya          #+#    #+#             */
-/*   Updated: 2023/02/04 00:01:23 by ptippaya         ###   ########.fr       */
+/*   Updated: 2023/02/08 18:13:35 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	startup_init(t_data *data)
 {
+	data->img_size = 64;
 	data->path = NULL;
 	data->map = NULL;
 	data->heigh = 0;
@@ -34,8 +35,11 @@ int	main(int ac, char **av)
 		return (0);
 	if (!checkmap_readfile(av[1], &data) || !checkmap_validpath(&data))
 		ft_printf("Map err!\n");
-	ft_printf("map pass!\n");
-	mlx_setup(&data);
-	free_data(&data);
+	else
+	{
+		ft_printf("map pass! heigh:%d width:%d\n", data.heigh, data.width);
+		mlx_setup(&data);
+		free_data(&data);
+	}
 	return (0);
 }

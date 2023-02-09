@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 23:41:49 by ptippaya          #+#    #+#             */
-/*   Updated: 2023/02/04 10:57:09 by ptippaya         ###   ########.fr       */
+/*   Updated: 2023/02/07 14:49:13 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_position {
 }	t_posotion;
 
 typedef struct s_data {
+	int			img_size;
 	void		*mlx;
 	void		*win;
 	char		*path;
@@ -48,5 +49,6 @@ void	free_map(char **map);
 void	free_data(t_data *data);
 void	mlx_setup(t_data *data);
 char	**mapcpy(t_data *data);
+void	putimg(t_data *data, size_t x, size_t y, char c);
 
 #endif

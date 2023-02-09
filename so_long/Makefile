@@ -6,7 +6,7 @@
 #    By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 15:52:45 by ptippaya          #+#    #+#              #
-#    Updated: 2023/02/04 00:09:54 by ptippaya         ###   ########.fr        #
+#    Updated: 2023/02/07 14:32:32 by ptippaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,8 @@ SRC =	main.c				\
 		checkmap_readfile.c	\
 		checkmap_validpath.c\
 		utils.c				\
-		mlx.c
+		mlx.c				\
+		mlx2.c
 SRCS = $(addprefix srcs/, $(SRC))
 SRCOBJ = $(SRC:.c=.o)
 
