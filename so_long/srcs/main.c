@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 22:05:45 by ptippaya          #+#    #+#             */
-/*   Updated: 2023/02/10 11:12:00 by ptippaya         ###   ########.fr       */
+/*   Updated: 2023/02/10 21:26:06 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,17 @@ int	main(int ac, char **av)
 
 	startup_init(&data);
 	if (ac != 2)
-		return (0);
+	{
+		ft_putstr_fd("You must enter 2 Argument!\n", STDERR_FILENO);
+		return (EXIT_FAILURE);
+	}
 	if (!checkmap_readfile(av[1], &data) || !checkmap_validpath(&data))
-		ft_putstr_fd("Error!\n", STDERR_FILENO);
+	{
+		free_map(data.map);
+		return (EXIT_FAILURE);
+	}
 	else
 		mlx_setup(&data);
 	free_map(data.map);
-	ft_printf("Mapsize heigh:%d width:%d\n", data.heigh, data.width);
 	return (0);
 }
