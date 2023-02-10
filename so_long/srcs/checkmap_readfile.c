@@ -63,6 +63,7 @@ static bool	initmap(t_data *data)
 	data->map[data->heigh] = NULL;
 	while (i < data->heigh)
 		data->map[i++] = get_next_line(fd);
+	(void) get_next_line(fd);
 	close (fd);
 	return (1);
 }

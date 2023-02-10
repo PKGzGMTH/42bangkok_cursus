@@ -6,27 +6,44 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:47:32 by ptippaya          #+#    #+#             */
-/*   Updated: 2023/02/08 18:11:18 by ptippaya         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:30:21 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-static void	update_win(t_data *data)
+static int	destroy(t_data *data)
 {
-	size_t	x;
-	size_t	y;
+	mlx_destroy_window(data->mlx, data->win);
+	mlx_destroy_display(data->mlx);
+	safefree(data->mlx);
+	free_map(data->map);
+	exit(EXIT_SUCCESS);
+}
 
-	y = 0;
-	while (y < data->heigh)
+static void	update_win(t_data *data, char *texture)
+{
+	char	texturespath[17];
+	void	*img;
+	ssize_t	x;
+	ssize_t	y;
+
+	while (*texture)
 	{
-		x = 0;
-		while (x < data->width)
+		y = -1;
+		ft_strlcpy(texturespath, "./textures/ .xpm", 17);
+		texturespath[11] = *(texture++);
+		img = mlx_xpm_file_to_image(data->mlx, texturespath, \
+		&data->img_size, &data->img_size);
+		while ((size_t)++y < data->heigh)
 		{
-			putimg(data, x, y, data->map[y][x]);
-			x++;
+			x = -1;
+			while ((size_t)++x < data->width)
+				if (data->map[y][x] == texturespath[11])
+					mlx_put_image_to_window(data->mlx, data->win, img, \
+					(int)x * data->img_size, (int)y * data->img_size);
 		}
-		y++;
+		mlx_destroy_image(data->mlx, img);
 	}
 }
 
@@ -38,36 +55,17 @@ static void	update_map(t_data *data, int mov_x, int mov_y)
 		data->collectable -= 1;
 	data->map[data->start.y][data->start.x] = '0';
 	data->map[data->start.y + mov_y][data->start.x + mov_x] = 'P';
-	if (data->map[data->exit.y][data->exit.x] != 'E')
+	if (!ft_strchr("PE", data->map[data->exit.y][data->exit.x]))
 		data->map[data->exit.y][data->exit.x] = 'E';
 	data->start.x += mov_x;
 	data->start.y += mov_y;
-	update_win(data);
+	update_win(data, "0EP");
 	if (data->start.x == data->exit.x && data->start.y == data->exit.y && \
 	data->collectable == 0)
 		destroy(data);
 }
 
-void	mlx_setup(t_data *data)
-{
-	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, data->width * data->img_size, \
-	data->heigh * data->img_size, "so_long");
-	update_win(data);
-	mlx_key_hook(data->win, key_hook, data);
-	mlx_hook(data->win, 17, 0L, destroy, data);
-	mlx_loop(data->mlx);
-}
-
-int	destroy(t_data *data)
-{
-	mlx_destroy_window(data->mlx, data->win);
-	mlx_destroy_display(data->mlx);
-	free_data(data);
-	exit(EXIT_SUCCESS);
-}
-
-int	key_hook(int keycode, t_data *data)
+static int	key_hook(int keycode, t_data *data)
 {
 	if (!ft_strchr("wasd", keycode) && (keycode < 81 && 84 < keycode))
 		return (0);
@@ -81,4 +79,15 @@ int	key_hook(int keycode, t_data *data)
 	if (keycode == 'd' || (char) keycode == 83)
 		update_map(data, 1, 0);
 	return (1);
+}
+
+void	mlx_setup(t_data *data)
+{
+	data->mlx = mlx_init();
+	data->win = mlx_new_window(data->mlx, data->width * data->img_size, \
+	data->heigh * data->img_size, "so_long");
+	update_win(data, "01CPE");
+	mlx_key_hook(data->win, key_hook, data);
+	mlx_hook(data->win, 17, 0L, destroy, data);
+	mlx_loop(data->mlx);
 }

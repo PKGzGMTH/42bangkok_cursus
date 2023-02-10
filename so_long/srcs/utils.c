@@ -22,16 +22,12 @@ void	free_map(char **map)
 {
 	size_t	i;
 
+	if (!map)
+		return ;
 	i = 0;
 	while (map && map[i])
 		safefree(map[i++]);
 	safefree(map);
-}
-
-void	free_data(t_data *data)
-{
-	free_map(data->map);
-	safefree(data->mlx);
 }
 
 size_t	init_position(t_posotion *p, size_t x, size_t y)
