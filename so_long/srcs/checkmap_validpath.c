@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 21:59:15 by ptippaya          #+#    #+#             */
-/*   Updated: 2023/02/04 10:58:11 by ptippaya         ###   ########.fr       */
+/*   Updated: 2023/02/10 21:09:50 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,21 @@ static bool	check_walkpath(t_data *data)
 
 int	checkmap_validpath(t_data *data)
 {
-	return (check_wall(data) && chech_obj(data) && check_walkpath(data));
+	if (!check_wall(data))
+	{
+		ft_putstr_fd("Map isn't closed/surrounded by walls!\n", STDERR_FILENO);
+		return (0);
+	}
+	if (!chech_obj(data))
+	{
+		ft_putstr_fd("Map must contain 1 exit, at least 1 collectible, \
+and 1 starting!\n", STDERR_FILENO);
+		return (0);
+	}
+	if (!check_walkpath(data))
+	{
+		ft_putstr_fd("Map is Invalid path!\n", STDERR_FILENO);
+		return (0);
+	}
+	return (1);
 }

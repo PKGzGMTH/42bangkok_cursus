@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 23:40:26 by ptippaya          #+#    #+#             */
-/*   Updated: 2022/12/15 21:06:10 by ptippaya         ###   ########.fr       */
+/*   Updated: 2023/02/10 21:16:33 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,20 @@ static bool	validmapsize(t_data *data)
 
 int	checkmap_readfile(char *file, t_data *data)
 {
-	return (checkfile(file, data) && initmap(data) && validmapsize(data));
+	if (!checkfile(file, data))
+	{
+		ft_putstr_fd("File not found!\n", STDERR_FILENO);
+		return (0);
+	}
+	if (!initmap(data))
+	{
+		ft_putstr_fd("Can't initial Map!\n", STDERR_FILENO);
+		return (0);
+	}
+	if (!validmapsize(data))
+	{
+		ft_putstr_fd("Invalid Map size!\n", STDERR_FILENO);
+		return (0);
+	}
+	return (1);
 }
