@@ -6,7 +6,7 @@
 /*   By: ptippaya <ptippaya@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 15:47:32 by ptippaya          #+#    #+#             */
-/*   Updated: 2023/02/10 11:30:21 by ptippaya         ###   ########.fr       */
+/*   Updated: 2023/02/10 21:28:56 by ptippaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ static int	destroy(t_data *data)
 
 static void	update_win(t_data *data, char *texture)
 {
-	char	texturespath[17];
-	void	*img;
-	ssize_t	x;
-	ssize_t	y;
+	char			texturespath[17];
+	void			*img;
+	ssize_t			x;
+	ssize_t			y;
+	static ssize_t	step = 0;
 
+	ft_printf("number of movements: %d\n", step++);
 	while (*texture)
 	{
 		y = -1;
@@ -78,6 +80,8 @@ static int	key_hook(int keycode, t_data *data)
 		update_map(data, -1, 0);
 	if (keycode == 'd' || (char) keycode == 83)
 		update_map(data, 1, 0);
+	if ((char)keycode == 27)
+		destroy(data);
 	return (1);
 }
 
